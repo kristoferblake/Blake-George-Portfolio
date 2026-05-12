@@ -1,0 +1,1968 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Blake George, Performance Systems & Training Specialist</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;1,9..40,300&display=swap" rel="stylesheet">
+<style>
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+  :root {
+    --navy: #0c1f3f;
+    --navy-mid: #1a3360;
+    --navy-light: #e8edf5;
+    --orange: #c75b20;
+    --orange-light: #fdf0e8;
+    --teal: #0f7c6e;
+    --teal-light: #e3f4f1;
+    --slate: #4a5568;
+    --slate-light: #f0f2f5;
+    --border: #dde2ea;
+    --text: #1a2332;
+    --text-muted: #5a6578;
+    --text-faint: #8a95a5;
+    --white: #ffffff;
+    --radius: 10px;
+    --radius-lg: 16px;
+  }
+
+  html { scroll-behavior: smooth; }
+
+  body {
+    font-family: 'DM Sans', sans-serif;
+    color: var(--text);
+    background: #f5f6f8;
+    line-height: 1.65;
+    font-size: 16px;
+  }
+
+  /* ── NAV ── */
+  nav {
+    position: sticky;
+    top: 0;
+    z-index: 100;
+    background: var(--navy);
+    padding: 0 2rem;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    height: 56px;
+    gap: 1.5rem;
+  }
+  .nav-brand {
+    font-family: 'DM Serif Display', serif;
+    font-size: 18px;
+    color: #fff;
+    white-space: nowrap;
+    letter-spacing: 0.01em;
+  }
+  .nav-brand em { font-style: italic; color: #a8bfd8; }
+  .nav-links {
+    display: flex;
+    gap: 0;
+    list-style: none;
+  }
+  .nav-links a {
+    font-size: 13px;
+    font-weight: 500;
+    color: #a8bfd8;
+    text-decoration: none;
+    padding: 6px 14px;
+    border-radius: 6px;
+    transition: color 0.15s, background 0.15s;
+    letter-spacing: 0.03em;
+  }
+  .nav-links a:hover { color: #fff; background: rgba(255,255,255,0.1); }
+
+  /* ── LAYOUT ── */
+  .container {
+    max-width: 900px;
+    margin: 0 auto;
+    padding: 0 1.5rem;
+  }
+
+  section { padding: 4rem 0; }
+  section + section { border-top: 1px solid var(--border); }
+
+  /* ── HERO ── */
+  .hero {
+    background: var(--navy);
+    padding: 4.5rem 0 4rem;
+    position: relative;
+    overflow: hidden;
+  }
+  .hero::before {
+    content: '';
+    position: absolute;
+    top: -60px; right: -80px;
+    width: 420px; height: 420px;
+    border-radius: 50%;
+    border: 1px solid rgba(168,191,216,0.15);
+  }
+  .hero::after {
+    content: '';
+    position: absolute;
+    bottom: -100px; left: -60px;
+    width: 300px; height: 300px;
+    border-radius: 50%;
+    border: 1px solid rgba(168,191,216,0.1);
+  }
+  .hero-inner {
+    max-width: 900px;
+    margin: 0 auto;
+    padding: 0 1.5rem;
+    display: grid;
+    grid-template-columns: 1fr auto;
+    gap: 3rem;
+    align-items: start;
+    position: relative;
+    z-index: 1;
+  }
+  .hero-eyebrow {
+    font-size: 11px;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+    color: #a8bfd8;
+    font-weight: 500;
+    margin-bottom: 1rem;
+  }
+  h1.hero-name {
+    font-family: 'DM Serif Display', serif;
+    font-size: clamp(40px, 6vw, 60px);
+    line-height: 1.0;
+    color: #fff;
+    margin-bottom: 0.75rem;
+  }
+  h1.hero-name em { font-style: italic; color: #a8bfd8; }
+  .hero-role {
+    font-size: 13px;
+    font-weight: 500;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: #7a9dc0;
+    margin-bottom: 1.25rem;
+  }
+  .hero-bio {
+    font-size: 15px;
+    line-height: 1.7;
+    color: #c5d4e8;
+    max-width: 540px;
+  }
+  .hero-badges {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 6px;
+    margin-top: 1.5rem;
+  }
+  .badge {
+    font-size: 11px;
+    font-weight: 500;
+    padding: 4px 11px;
+    border-radius: 20px;
+    border: 1px solid rgba(168,191,216,0.3);
+    color: #a8bfd8;
+    background: rgba(168,191,216,0.08);
+    letter-spacing: 0.02em;
+  }
+  .hero-stats {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    align-self: start;
+    margin-top: 4px;
+  }
+  .stat-pill {
+    background: rgba(255,255,255,0.07);
+    border: 1px solid rgba(168,191,216,0.2);
+    border-radius: var(--radius);
+    padding: 1rem 1.25rem;
+    text-align: center;
+    min-width: 110px;
+  }
+  .stat-pill .num {
+    font-family: 'DM Serif Display', serif;
+    font-size: 28px;
+    color: #fff;
+    line-height: 1;
+    display: block;
+  }
+  .stat-pill .lbl {
+    font-size: 10px;
+    color: #7a9dc0;
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+    margin-top: 4px;
+    display: block;
+  }
+
+  /* ── SECTION LABELS ── */
+  .section-label {
+    font-size: 10px;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+    font-weight: 500;
+    color: var(--text-faint);
+    margin-bottom: 1.75rem;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+  }
+  .section-label::after {
+    content: '';
+    flex: 1;
+    height: 1px;
+    background: var(--border);
+  }
+
+  h2.section-title {
+    font-family: 'DM Serif Display', serif;
+    font-size: 30px;
+    line-height: 1.15;
+    margin-bottom: 0.5rem;
+  }
+  h2.section-title em { font-style: italic; color: var(--slate); }
+
+  p.section-sub {
+    font-size: 15px;
+    color: var(--text-muted);
+    max-width: 580px;
+    line-height: 1.65;
+    margin-bottom: 2rem;
+  }
+
+  /* ── ABOUT ── */
+  .about-grid {
+    display: grid;
+    grid-template-columns: 1fr 320px;
+    gap: 3rem;
+    align-items: start;
+  }
+  .about-body p { font-size: 15px; line-height: 1.75; color: var(--text-muted); margin-bottom: 1rem; }
+  .about-body p:last-child { margin-bottom: 0; }
+  .about-body strong { color: var(--text); font-weight: 500; }
+
+  .skills-card {
+    background: var(--white);
+    border: 1px solid var(--border);
+    border-radius: var(--radius-lg);
+    padding: 1.5rem;
+  }
+  .skills-card h3 {
+    font-size: 12px;
+    font-weight: 500;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: var(--text-faint);
+    margin-bottom: 1rem;
+  }
+  .skill-row {
+    margin-bottom: 0.85rem;
+  }
+  .skill-row:last-child { margin-bottom: 0; }
+  .skill-name {
+    font-size: 13px;
+    font-weight: 500;
+    color: var(--text);
+    margin-bottom: 4px;
+  }
+  .skill-bar-track {
+    height: 4px;
+    background: var(--slate-light);
+    border-radius: 2px;
+    overflow: hidden;
+  }
+  .skill-bar-fill {
+    height: 100%;
+    border-radius: 2px;
+    background: var(--navy-mid);
+  }
+
+  /* ── WORK SAMPLES ── */
+  .work-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1rem;
+  }
+  .work-card {
+    background: var(--white);
+    border: 1px solid var(--border);
+    border-radius: var(--radius-lg);
+    padding: 1.5rem;
+    text-decoration: none;
+    display: block;
+    transition: border-color 0.15s, box-shadow 0.15s, transform 0.15s;
+    cursor: pointer;
+  }
+  .work-card:hover {
+    border-color: #b0bdd0;
+    box-shadow: 0 4px 20px rgba(12,31,63,0.08);
+    transform: translateY(-2px);
+  }
+  .work-tag {
+    display: inline-block;
+    font-size: 10px;
+    font-weight: 500;
+    letter-spacing: 0.07em;
+    text-transform: uppercase;
+    padding: 3px 10px;
+    border-radius: 20px;
+    margin-bottom: 0.75rem;
+  }
+  .tag-change { background: #e6eff9; color: #185fa5; }
+  .tag-elearn { background: #e0f4ee; color: #0f6e56; }
+  .tag-eval   { background: #fef0e0; color: #854f0b; }
+  .tag-id     { background: #eeedfe; color: #534ab7; }
+  .tag-needs  { background: #fdeae5; color: #993c1d; }
+  .tag-opwl   { background: #eaf3de; color: #3b6d11; }
+  .tag-wp     { background: #f0e8fb; color: #6b35b8; }
+
+  .work-card h3 {
+    font-family: 'DM Serif Display', serif;
+    font-size: 18px;
+    line-height: 1.2;
+    margin-bottom: 0.5rem;
+    color: var(--text);
+  }
+  .work-card .course {
+    font-size: 11px;
+    color: var(--text-faint);
+    letter-spacing: 0.04em;
+    margin-bottom: 0.75rem;
+  }
+  .work-card p {
+    font-size: 13px;
+    color: var(--text-muted);
+    line-height: 1.6;
+    margin-bottom: 1rem;
+  }
+  .work-card .arrow {
+    font-size: 12px;
+    font-weight: 500;
+    color: var(--navy-mid);
+    letter-spacing: 0.03em;
+  }
+
+  /* ── EXPERIENCE TIMELINE ── */
+  .timeline { position: relative; padding-left: 28px; }
+  .timeline::before {
+    content: '';
+    position: absolute;
+    left: 8px; top: 8px; bottom: 8px;
+    width: 1px;
+    background: var(--border);
+  }
+  .tl-item { position: relative; margin-bottom: 2rem; }
+  .tl-item:last-child { margin-bottom: 0; }
+  .tl-dot {
+    position: absolute;
+    left: -24px;
+    top: 6px;
+    width: 9px; height: 9px;
+    border-radius: 50%;
+    background: var(--navy-mid);
+    border: 2px solid var(--white);
+    outline: 1px solid var(--border);
+  }
+  .tl-item.current .tl-dot { background: var(--orange); outline-color: var(--orange); }
+  .tl-header { display: flex; justify-content: space-between; align-items: baseline; gap: 1rem; flex-wrap: wrap; }
+  .tl-org {
+    font-weight: 500;
+    font-size: 15px;
+    color: var(--text);
+  }
+  .tl-dates {
+    font-size: 12px;
+    color: var(--text-faint);
+    white-space: nowrap;
+  }
+  .tl-role {
+    font-size: 13px;
+    color: var(--text-muted);
+    margin-top: 2px;
+    margin-bottom: 0.6rem;
+  }
+  .tl-bullets {
+    list-style: none;
+    padding: 0;
+  }
+  .tl-bullets li {
+    font-size: 13px;
+    color: var(--text-muted);
+    line-height: 1.6;
+    padding-left: 14px;
+    position: relative;
+    margin-bottom: 4px;
+  }
+  .tl-bullets li::before {
+    content: '–';
+    position: absolute;
+    left: 0;
+    color: var(--text-faint);
+  }
+
+  /* ── CERTS & EDU ── */
+  .two-col { display: grid; grid-template-columns: 1fr 1fr; gap: 2rem; }
+  .card-list {
+    background: var(--white);
+    border: 1px solid var(--border);
+    border-radius: var(--radius-lg);
+    overflow: hidden;
+  }
+  .card-list-header {
+    padding: 1rem 1.25rem 0.75rem;
+    border-bottom: 1px solid var(--border);
+    font-size: 12px;
+    font-weight: 500;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: var(--text-faint);
+  }
+  .card-list-item {
+    padding: 0.9rem 1.25rem;
+    border-bottom: 1px solid var(--border);
+    font-size: 13px;
+    line-height: 1.45;
+  }
+  .card-list-item:last-child { border-bottom: none; }
+  .card-list-item .item-title { font-weight: 500; color: var(--text); margin-bottom: 2px; }
+  .card-list-item .item-sub { font-size: 12px; color: var(--text-faint); }
+
+  /* ── PAGE SECTIONS ── */
+  /* Work Sample Detail Pages */
+  .page { display: none; }
+  .page.active { display: block; }
+
+  .page-hero {
+    background: var(--navy);
+    padding: 3rem 0 2.5rem;
+  }
+  .page-hero .breadcrumb {
+    font-size: 12px;
+    color: #7a9dc0;
+    margin-bottom: 1rem;
+    cursor: pointer;
+  }
+  .page-hero .breadcrumb:hover { color: #a8bfd8; }
+  .page-hero h1 {
+    font-family: 'DM Serif Display', serif;
+    font-size: clamp(26px, 4vw, 38px);
+    color: #fff;
+    line-height: 1.15;
+    margin-bottom: 0.5rem;
+  }
+  .page-hero .meta {
+    font-size: 12px;
+    color: #7a9dc0;
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+    font-weight: 500;
+  }
+
+  .prose { max-width: 720px; }
+  .prose h2 {
+    font-family: 'DM Serif Display', serif;
+    font-size: 22px;
+    margin: 2.5rem 0 0.75rem;
+    color: var(--text);
+  }
+  .prose h3 {
+    font-size: 15px;
+    font-weight: 500;
+    margin: 1.5rem 0 0.5rem;
+    color: var(--text);
+  }
+  .prose p {
+    font-size: 15px;
+    line-height: 1.78;
+    color: var(--text-muted);
+    margin-bottom: 1rem;
+  }
+  .prose ul {
+    margin: 0.5rem 0 1rem 1.25rem;
+  }
+  .prose ul li {
+    font-size: 15px;
+    line-height: 1.65;
+    color: var(--text-muted);
+    margin-bottom: 4px;
+  }
+  .prose strong { color: var(--text); font-weight: 500; }
+
+  .callout {
+    border-left: 3px solid var(--navy-mid);
+    background: var(--navy-light);
+    border-radius: 0 var(--radius) var(--radius) 0;
+    padding: 1rem 1.25rem;
+    margin: 1.5rem 0;
+    font-size: 14px;
+    line-height: 1.65;
+    color: var(--navy);
+  }
+
+  .skills-demonstrated {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+    margin: 1rem 0;
+  }
+  .skill-tag {
+    font-size: 12px;
+    font-weight: 500;
+    padding: 5px 12px;
+    border-radius: 20px;
+    background: var(--slate-light);
+    color: var(--slate);
+    border: 1px solid var(--border);
+  }
+
+  .appendix-list { list-style: none; padding: 0; }
+  .appendix-list li { margin-bottom: 8px; }
+  .appendix-list a {
+    font-size: 14px;
+    color: var(--navy-mid);
+    text-decoration: none;
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    border-bottom: 1px solid transparent;
+    transition: border-color 0.15s;
+  }
+  .appendix-list a:hover { border-color: var(--navy-mid); }
+  .appendix-list a::before { content: '↗'; font-size: 11px; }
+
+  .ref-list { list-style: none; padding: 0; }
+  .ref-list li {
+    font-size: 13px;
+    color: var(--text-muted);
+    line-height: 1.6;
+    margin-bottom: 0.6rem;
+    padding-left: 1.5rem;
+    position: relative;
+  }
+  .ref-list li::before {
+    content: '';
+    position: absolute;
+    left: 0; top: 10px;
+    width: 8px; height: 1px;
+    background: var(--text-faint);
+  }
+
+  /* ── E-LEARNING PLACEHOLDER ── */
+  .placeholder-box {
+    border: 2px dashed var(--border);
+    border-radius: var(--radius-lg);
+    padding: 3rem 2rem;
+    text-align: center;
+    color: var(--text-faint);
+  }
+  .placeholder-box p { font-size: 14px; margin-top: 0.5rem; }
+  .placeholder-icon { font-size: 32px; margin-bottom: 0.5rem; }
+
+  /* ── CONTACT ── */
+  .contact-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 1rem;
+  }
+  .contact-card {
+    background: var(--white);
+    border: 1px solid var(--border);
+    border-radius: var(--radius-lg);
+    padding: 1.5rem;
+    text-align: center;
+  }
+  .contact-card .icon { font-size: 20px; margin-bottom: 0.5rem; }
+  .contact-card h4 { font-size: 13px; font-weight: 500; margin-bottom: 4px; }
+  .contact-card p { font-size: 13px; color: var(--text-muted); }
+
+  /* ── FOOTER ── */
+  footer {
+    background: var(--navy);
+    padding: 2rem 0;
+    text-align: center;
+  }
+  footer p {
+    font-size: 12px;
+    color: #5a7898;
+    letter-spacing: 0.04em;
+  }
+
+  /* ── UTILS ── */
+  .mt1 { margin-top: 1rem; }
+  .mt2 { margin-top: 2rem; }
+  .mt3 { margin-top: 3rem; }
+
+
+  .hero-right {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 12px;
+  }
+  .hero-photo-wrap {
+    width: 300px;
+    height: 300px;
+    border-radius: 50%;
+    overflow: hidden;
+    border: 3px solid rgba(168,191,216,0.35);
+    flex-shrink: 0;
+  }
+  .hero-photo {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center top;
+  }
+  .hero-stats {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    align-self: stretch;
+  }
+
+  @media (max-width: 680px) {
+    .hero-inner, .about-grid, .two-col, .work-grid, .contact-grid { grid-template-columns: 1fr; }
+    .hero-stats { flex-direction: row; }
+    nav { padding: 0 1rem; }
+    .nav-links { display: none; }
+  }
+</style>
+</head>
+<body>
+
+<!-- ── NAV ── -->
+<nav>
+  <span class="nav-brand" onclick="showPage('home')" style="cursor:pointer;">Blake <em>George</em></span>
+  <ul class="nav-links">
+    <li><a href="#" onclick="showPage('home');return false;">Home</a></li>
+    <li><a href="#" onclick="showSection('about');return false;">About</a></li>
+    <li><a href="#" onclick="showSection('work');return false;">Work Samples</a></li>
+    <li><a href="#" onclick="showPage('resume');return false;">Resume</a></li>
+    <li><a href="#" onclick="showSection('testimonials');return false;">Testimonials</a></li>
+    <li><a href="#" onclick="showSection('contact');return false;">Contact</a></li>
+  </ul>
+</nav>
+
+<!-- ══════════════════════════════════════
+     HOME PAGE
+══════════════════════════════════════ -->
+<div id="page-home" class="page active">
+
+  <!-- Hero -->
+  <div class="hero">
+    <div class="hero-inner">
+      <div>
+        <div class="hero-eyebrow">Boise State OPWL Portfolio · 2025–2026</div>
+        <h1 class="hero-name">Blake<br><em>George</em></h1>
+        <div class="hero-role">Performance Systems &amp; Training Specialist</div>
+        <p class="hero-bio">Senior Chief (E-8) in the U.S. Coast Guard with over 20 years in aviation maintenance, training, and performance systems. I design solutions that develop people, strengthen organizations, and elevate performance — from the flight line to the schoolhouse.</p>
+        <div class="hero-badges">
+          <span class="badge">Instructional Design</span>
+          <span class="badge">Change Management</span>
+          <span class="badge">Needs Assessment</span>
+          <span class="badge">Program Evaluation</span>
+          <span class="badge">E-Learning</span>
+          <span class="badge">PMP Certified</span>
+          <span class="badge">FAA A&amp;P / IA</span>
+        </div>
+      </div>
+      <div class="hero-right">
+        <div class="hero-photo-wrap">
+          <img src="data:image/jpeg;base64,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" alt="Blake George" class="hero-photo">
+        </div>
+        <div class="hero-stats">
+          <div class="stat-pill">
+            <span class="num">20+</span>
+            <span class="lbl">Years service</span>
+          </div>
+          <div class="stat-pill">
+            <span class="num">E-8</span>
+            <span class="lbl">Senior Chief</span>
+          </div>
+          <div class="stat-pill">
+            <span class="num">7</span>
+            <span class="lbl">Work samples</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- About -->
+  <section id="about" style="background:#fff;">
+    <div class="container">
+      <div class="section-label">About</div>
+      <div class="about-grid">
+        <div class="about-body">
+          <h2 class="section-title">Building systems that<br><em>actually improve performance</em></h2>
+          <p class="mt2">My work is rooted in a simple conviction: training alone rarely solves performance problems. As a Senior Chief and human performance practitioner, I've spent two decades watching organizations pour resources into classroom programs while the real barriers (poor information flow, inadequate tools, unclear expectations) go unaddressed.</p>
+          <p>The OPWL program at Boise State gave me the frameworks to do what I was already trying to do intuitively: diagnose root causes, design targeted interventions, and evaluate whether those interventions actually moved the needle.</p>
+          <p>I bring the perspective of someone who has served as a <strong>Flight Engineer on executive aircraft</strong>, led maintenance operations on multiple airframes, and spent two years as a <strong>Human Performance Specialist</strong> conducting evaluations across 40+ Coast Guard schoolhouses. That combination of operational credibility and analytical rigor shapes every project in this portfolio.</p>
+          <p>I'm currently completing my M.S. in OPWL (expected Summer 2026) while still serving on active duty out of Petaluma, California.</p>
+        </div>
+        <div>
+          <div class="skills-card">
+            <h3>Core Competencies</h3>
+            <div class="skill-row">
+              <div class="skill-name">Instructional Design &amp; Analysis</div>
+              <div class="skill-bar-track"><div class="skill-bar-fill" style="width:90%"></div></div>
+            </div>
+            <div class="skill-row">
+              <div class="skill-name">Program Evaluation</div>
+              <div class="skill-bar-track"><div class="skill-bar-fill" style="width:88%"></div></div>
+            </div>
+            <div class="skill-row">
+              <div class="skill-name">Needs &amp; Performance Assessment</div>
+              <div class="skill-bar-track"><div class="skill-bar-fill" style="width:92%"></div></div>
+            </div>
+            <div class="skill-row">
+              <div class="skill-name">Change Management</div>
+              <div class="skill-bar-track"><div class="skill-bar-fill" style="width:82%"></div></div>
+            </div>
+            <div class="skill-row">
+              <div class="skill-name">Survey Design &amp; Data Analysis</div>
+              <div class="skill-bar-track"><div class="skill-bar-fill" style="width:80%"></div></div>
+            </div>
+            <div class="skill-row">
+              <div class="skill-name">Leadership &amp; Team Development</div>
+              <div class="skill-bar-track"><div class="skill-bar-fill" style="width:95%"></div></div>
+            </div>
+            <div class="skill-row" style="margin-bottom:0">
+              <div class="skill-name">Aviation Maintenance Systems</div>
+              <div class="skill-bar-track"><div class="skill-bar-fill" style="width:97%"></div></div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Experience Timeline -->
+      <div class="mt3">
+        <div class="section-label">Experience</div>
+        <div class="timeline">
+          <div class="tl-item current">
+            <div class="tl-dot"></div>
+            <div class="tl-header">
+              <span class="tl-org">Boise State University, OPWL Graduate Program</span>
+              <span class="tl-dates">Aug 2025 – Present</span>
+            </div>
+            <div class="tl-role">Graduate Student · M.S. Organizational Performance &amp; Workplace Learning</div>
+          </div>
+          <div class="tl-item current">
+            <div class="tl-dot"></div>
+            <div class="tl-header">
+              <span class="tl-org">Training Center Petaluma, Performance Systems Branch</span>
+              <span class="tl-dates">Jun 2023 – Aug 2025</span>
+            </div>
+            <div class="tl-role">Human Performance Specialist / Evaluation Officer</div>
+            <ul class="tl-bullets">
+              <li>Led Level 1 and Level 3 evaluations across 40+ Coast Guard schoolhouses</li>
+              <li>Conducted human performance analyses to identify root causes of training and performance gaps</li>
+              <li>Designed and implemented mixed-method evaluation plans using surveys, interviews, and document review</li>
+              <li>Delivered actionable recommendations to senior leadership to improve training delivery and system performance</li>
+            </ul>
+          </div>
+          <div class="tl-item">
+            <div class="tl-dot"></div>
+            <div class="tl-header">
+              <span class="tl-org">Air Station Port Angeles, WA, MH-65E Dolphin</span>
+              <span class="tl-dates">Sep 2019 – Jun 2023</span>
+            </div>
+            <div class="tl-role">Maintenance Chief / Quality Assurance Division Chief</div>
+            <ul class="tl-bullets">
+              <li>Led maintenance operations and long-term aircraft readiness planning</li>
+              <li>Enforced maintenance standards, conducted audits, and ensured regulatory compliance</li>
+            </ul>
+          </div>
+          <div class="tl-item">
+            <div class="tl-dot"></div>
+            <div class="tl-header">
+              <span class="tl-org">Air Station Barbers Point, HI, HC-130H Hercules</span>
+              <span class="tl-dates">Aug 2017 – Sep 2019</span>
+            </div>
+            <div class="tl-role">Basic Aircrew / Flight Engineer (in training) · Engine Shop Supervisor</div>
+          </div>
+          <div class="tl-item">
+            <div class="tl-dot"></div>
+            <div class="tl-header">
+              <span class="tl-org">CG Air Station Washington D.C., Gulfstream G5/G550</span>
+              <span class="tl-dates">Jul 2012 – Aug 2017</span>
+            </div>
+            <div class="tl-role">Flight Engineer · Senior Enlisted Flight Examining Board (EFEB) Member</div>
+            <ul class="tl-bullets">
+              <li>Flew executive transport missions supporting senior DHS and USCG officials</li>
+              <li>Trained and evaluated aircrew qualification in a high-visibility, no-fail environment</li>
+            </ul>
+          </div>
+          <div class="tl-item">
+            <div class="tl-dot"></div>
+            <div class="tl-header">
+              <span class="tl-org">Air Station San Francisco, CA, MH-65C Dolphin</span>
+              <span class="tl-dates">May 2008 – Jul 2012</span>
+            </div>
+            <div class="tl-role">Helicopter Flight Mechanic</div>
+            <ul class="tl-bullets">
+              <li>Flew as crew on search and rescue and maritime law enforcement missions over San Francisco Bay, the Pacific Coast, and Northern California inland waterways</li>
+              <li>Performed scheduled and unscheduled maintenance on four MH-65C Dolphin helicopters in a high-tempo operational environment</li>
+              <li>Served as collateral Quality Assurance representative, reviewing maintenance documentation and ensuring compliance with USCG and FAA standards</li>
+            </ul>
+          </div>
+          <div class="tl-item">
+            <div class="tl-dot"></div>
+            <div class="tl-header">
+              <span class="tl-org">Aviation Maintenance Technician "A" School</span>
+              <span class="tl-dates">Sep 2007 – Feb 2008</span>
+            </div>
+            <div class="tl-role">AMT Student</div>
+          </div>
+          <div class="tl-item">
+            <div class="tl-dot"></div>
+            <div class="tl-header">
+              <span class="tl-org">Air Station Kodiak, AK</span>
+              <span class="tl-dates">Apr 2007 – Sep 2007</span>
+            </div>
+            <div class="tl-role">Airman</div>
+          </div>
+          <div class="tl-item">
+            <div class="tl-dot"></div>
+            <div class="tl-header">
+              <span class="tl-org">USCGC Alex Haley</span>
+              <span class="tl-dates">Feb 2006 – Apr 2007</span>
+            </div>
+            <div class="tl-role">Boarding Team Member / Deck Operations</div>
+          </div>
+          <div class="tl-item">
+            <div class="tl-dot"></div>
+            <div class="tl-header">
+              <span class="tl-org">USCG Training Center Cape May, NJ</span>
+              <span class="tl-dates">Nov 2005 – Feb 2006</span>
+            </div>
+            <div class="tl-role">Basic Training</div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Education & Certs -->
+      <div class="mt3">
+        <div class="section-label">Education &amp; Credentials</div>
+        <div class="two-col">
+          <div class="card-list">
+            <div class="card-list-header">Education</div>
+            <div class="card-list-item">
+              <div class="item-title">M.S. Organizational Performance &amp; Workplace Learning</div>
+              <div class="item-sub">Boise State University · Expected Summer 2026</div>
+            </div>
+            <div class="card-list-item">
+              <div class="item-title">Graduate Certificate, Workplace Performance Improvement</div>
+              <div class="item-sub">Boise State University · Expected Summer 2026</div>
+            </div>
+            <div class="card-list-item">
+              <div class="item-title">Graduate Certificate, Workplace Instructional Design</div>
+              <div class="item-sub">Boise State University · Expected Fall 2026</div>
+            </div>
+            <div class="card-list-item">
+              <div class="item-title">Master of Business Administration (MBA)</div>
+              <div class="item-sub">East Texas A&amp;M University · 2017</div>
+            </div>
+            <div class="card-list-item">
+              <div class="item-title">B.S. Applied Science &amp; Technology (Aviation Maintenance)</div>
+              <div class="item-sub">Thomas Edison State University · 2014</div>
+            </div>
+          </div>
+          <div class="card-list">
+            <div class="card-list-header">Certifications &amp; Licenses</div>
+            <div class="card-list-item">
+              <div class="item-title">PMI Project Management Professional (PMP)</div>
+              <div class="item-sub">Project Management Institute</div>
+            </div>
+            <div class="card-list-item">
+              <div class="item-title">FAA Inspection Authorization (IA)</div>
+              <div class="item-sub">Federal Aviation Administration</div>
+            </div>
+            <div class="card-list-item">
+              <div class="item-title">FAA Airframe &amp; Powerplant (A&amp;P) Mechanic</div>
+              <div class="item-sub">Federal Aviation Administration</div>
+            </div>
+            <div class="card-list-item">
+              <div class="item-title">FCC Ground Radiotelephone Operator License (GROL)</div>
+              <div class="item-sub">With Ship Radar Endorsement</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Work Samples -->
+  <section id="work" style="background:#f5f6f8;">
+    <div class="container">
+      <div class="section-label">Work Samples</div>
+      <h2 class="section-title">Projects &amp; <em>deliverables</em></h2>
+      <p class="section-sub">Each sample represents graduate-level applied work grounded in real organizational contexts — from Coast Guard training systems to nonprofit performance challenges.</p>
+      <div class="work-grid">
+
+        <a class="work-card" href="#" onclick="showPage('change');return false;">
+          <span class="work-tag tag-change">Change Management</span>
+          <h3>TRACEN Cape May Fitness Readiness</h3>
+          <div class="course">OPWL 577 · Leading Change</div>
+          <p>A structured change management strategy to address a 25% PFA failure rate and build a lasting fitness culture at the Coast Guard's sole enlisted accession command.</p>
+          <span class="arrow">Read more →</span>
+        </a>
+
+        <a class="work-card" href="#" onclick="showPage('elearning');return false;">
+          <span class="work-tag tag-elearn">E-Learning</span>
+          <h3>E-Learning Project</h3>
+          <div class="course">Coming soon</div>
+          <p>An interactive digital learning module developed for a Coast Guard training context. Full case study and deliverables to be posted upon course completion.</p>
+          <span class="arrow">View placeholder →</span>
+        </a>
+
+        <a class="work-card" href="#" onclick="showPage('evaluation');return false;">
+          <span class="work-tag tag-eval">Evaluation</span>
+          <h3>EMT Recertification Program Evaluation</h3>
+          <div class="course">OPWL 530 · Evaluation</div>
+          <p>A mixed-method evaluation of the USCG's distributed EMT recertification model, examining standardization gaps and skill retention across 1,253 certified personnel.</p>
+          <span class="arrow">Read more →</span>
+        </a>
+
+        <a class="work-card" href="#" onclick="showPage('id');return false;">
+          <span class="work-tag tag-id">Instructional Design</span>
+          <h3>Emergency Drill Debrief Standardization</h3>
+          <div class="course">OPWL 537 · Instructional Design</div>
+          <p>A performance support toolkit for Idaho Youth Ranch managers, a facilitator's guide, job aid, and documentation form designed to replace inconsistent debrief practice with a structured system.</p>
+          <span class="arrow">Read more →</span>
+        </a>
+
+        <a class="work-card" href="#" onclick="showPage('needs');return false;">
+          <span class="work-tag tag-needs">Needs Assessment</span>
+          <h3>OPWL Industry Mentoring Program</h3>
+          <div class="course">OPWL 529 · Needs Assessment</div>
+          <p>A comprehensive needs assessment identifying the gap between academic preparation and workplace readiness for OPWL graduates, leading to a structured mentoring program proposal.</p>
+          <span class="arrow">Read more →</span>
+        </a>
+
+        <a class="work-card" href="#" onclick="showPage('opwl');return false;">
+          <span class="work-tag tag-opwl">OPWL Program Goals</span>
+          <h3>Program Goals &amp; Professional Growth</h3>
+          <div class="course">Boise State OPWL Program</div>
+          <p>A reflection on the OPWL program learning outcomes, how each course has shaped my practice, and how this work connects to my long-term career as a performance improvement professional.</p>
+          <span class="arrow">Read more →</span>
+        </a>
+
+        <a class="work-card" href="#" onclick="showPage('wp');return false;">
+          <span class="work-tag tag-wp">Workplace Performance</span>
+          <h3>Personal Performance Improvement Framework</h3>
+          <div class="course">OPWL 560 · Workplace Performance</div>
+          <p>A personal Human Performance Improvement and Organization Development framework designed to guide performance analysis, intervention selection, and organizational change efforts in real-world environments.</p>
+          <span class="arrow">Read more →</span>
+        </a>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- Testimonials -->
+  <section id="testimonials" style="background:#f5f6f8;">
+    <div class="container">
+      <div class="section-label">Testimonials</div>
+      <h2 class="section-title">What colleagues <em>say</em></h2>
+      <div style="display:grid; grid-template-columns:1fr 1fr; gap:1rem;">
+        <div style="background:var(--white); border:1px solid var(--border); border-radius:var(--radius-lg); padding:1.75rem;">
+          <div style="font-size:10px; font-weight:500; letter-spacing:0.1em; text-transform:uppercase; color:var(--text-faint); margin-bottom:0.75rem;">OPWL 537 — Instructional Design</div>
+          <div style="font-size:28px; color:var(--navy-light); line-height:1; margin-bottom:0.75rem;">"</div>
+          <p style="font-size:14px; line-height:1.75; color:var(--text-muted); font-style:italic; margin-bottom:1.25rem;">Blake contributed to a valuable instructional design project for Idaho Youth Ranch by helping create an Emergency Drill Debrief toolkit for residential program managers and supervisors. Before this project, the organization did not have a standard guide for helping managers and supervisors facilitate meaningful emergency drill debriefs across different locations. This well-designed toolkit helps staff turn emergency drills into opportunities for professional development, performance improvement, and helpful reflection on emergency procedures. Blake's contribution helped create a practical resource that supports safer, more effective emergency preparedness practices across Idaho Youth Ranch's residential programs.</p>
+          <div style="font-size:13px; font-weight:500; color:var(--text);">Victoria Abramenka-Lachheb, PhD</div>
+          <div style="font-size:12px; color:var(--text-faint);">Instructor, OPWL 537 — Boise State University</div>
+        </div>
+        <div style="background:var(--white); border:1px solid var(--border); border-radius:var(--radius-lg); padding:1.75rem;">
+          <div style="font-size:10px; font-weight:500; letter-spacing:0.1em; text-transform:uppercase; color:var(--text-faint); margin-bottom:0.75rem;">OPWL 530 — Evaluation</div>
+          <div style="font-size:28px; color:var(--navy-light); line-height:1; margin-bottom:0.75rem;">"</div>
+          <p style="font-size:14px; line-height:1.75; color:var(--text-muted); font-style:italic; margin-bottom:1.25rem;">Blake and his team's evaluation of the EMT recertification process demonstrates a strong application of Chyung's 10-Step evaluation framework and the OPWL program's learning goals. Their work provided the client with meaningful insights into the high-stakes challenges of the current process and identified opportunities for improvement. As a result, the client is well-positioned to make informed, evidence-based decisions that strengthen the program and support stakeholder success. Blake and his team approached the project with professionalism and integrity throughout.</p>
+          <div style="font-size:13px; font-weight:500; color:var(--text);">Dawn M. Snyder, Ph.D., C.P.T.</div>
+          <div style="font-size:12px; color:var(--text-faint);">Senior Adjunct Faculty, OPWL — Boise State University</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Contact -->
+  <section id="contact" style="background:#fff;">
+    <div class="container">
+      <div class="section-label">Contact</div>
+      <h2 class="section-title">Let's <em>connect</em></h2>
+      <p class="section-sub">I'm available for conversations about performance consulting, human capital work, instructional design, and organizational development — in the Coast Guard or beyond. If you're working on a hard problem involving people and performance, I'd like to hear about it.</p>
+      <div class="contact-grid">
+        <div class="contact-card" style="background:var(--navy); border-color:var(--navy);">
+          <div style="font-family:'DM Serif Display',serif; font-size:22px; color:#fff; margin-bottom:4px;">Blake George</div>
+          <p style="margin-top:4px; color:#a8bfd8; font-size:13px;">Senior Chief (E-8), U.S. Coast Guard</p>
+          <p style="color:#a8bfd8; font-size:13px;">OPWL Graduate Student, Boise State University</p>
+          <p style="margin-top:12px; color:#7a9dc0; font-size:12px; letter-spacing:0.04em;">Petaluma, CA · Available for remote work</p>
+        </div>
+        <div class="contact-card">
+          <div style="display:flex; flex-direction:column; gap:1rem;">
+            <div>
+              <div style="font-size:10px; font-weight:500; letter-spacing:0.1em; text-transform:uppercase; color:var(--text-faint); margin-bottom:4px;">Email</div>
+              <a href="mailto:kristoferblake@gmail.com" style="font-size:14px; color:var(--navy-mid); text-decoration:none; font-weight:500;">kristoferblake@gmail.com</a>
+            </div>
+            <div>
+              <div style="font-size:10px; font-weight:500; letter-spacing:0.1em; text-transform:uppercase; color:var(--text-faint); margin-bottom:4px;">Phone</div>
+              <a href="tel:3036387210" style="font-size:14px; color:var(--navy-mid); text-decoration:none; font-weight:500;">(303) 638-7210</a>
+            </div>
+            <div>
+              <div style="font-size:10px; font-weight:500; letter-spacing:0.1em; text-transform:uppercase; color:var(--text-faint); margin-bottom:4px;">LinkedIn</div>
+              <a href="https://www.linkedin.com/in/christopher-blake-george-mba-pmp-2a17a564" target="_blank" style="font-size:14px; color:var(--navy-mid); text-decoration:none; font-weight:500;">Connect on LinkedIn ↗</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+</div><!-- end #page-home -->
+
+
+<!-- ══════════════════════════════════════
+     CHANGE MANAGEMENT PAGE
+══════════════════════════════════════ -->
+<div id="page-change" class="page">
+  <div class="page-hero">
+    <div class="container">
+      <div class="breadcrumb" onclick="showPage('home')">← Work Samples</div>
+      <div class="meta">OPWL 577, Leading Change</div>
+      <h1>TRACEN Cape May Fitness Readiness Change Management</h1>
+    </div>
+  </div>
+  <section style="background:#fff;">
+    <div class="container">
+      <div class="prose">
+
+        <div class="callout">A collaborative change management project addressing a 25% physical fitness assessment failure rate at the U.S. Coast Guard's sole enlisted accession command, applying the Kaleidoscope Model and ADKAR framework to shift the organization from compliance-focused to culture-focused readiness.</div>
+
+        <h2>Project Overview</h2>
+        <p>This project focused on supporting organizational change at Training Center (TRACEN) Cape May in response to the Coast Guard's Physical Readiness Program (PRP) implementation. Beginning July 1, 2026, mandatory Physical Fitness Tests (PFTs) become official records that may directly impact promotion, advancement, and assignment eligibility. As the Coast Guard's sole enlisted accession command, TRACEN Cape May plays a critical role in shaping organizational culture and readiness standards across the service.</p>
+        <p>Our team examined barriers to physical readiness and developed a structured change management strategy focused on building a sustainable fitness culture rather than a short-term compliance effort — balancing operational requirements with long-term readiness, leadership engagement, and employee support.</p>
+
+        <h2>The Challenge</h2>
+        <p>At the time of the project, TRACEN Cape May had an initial PFA pass rate of approximately 75%, leaving a 25% performance gap relative to the Commanding Officer's goal of 100%. The challenge extended beyond fitness testing alone. The organization needed to shift from viewing physical readiness as a periodic requirement to embedding it into the culture of the command.</p>
+        <p>Operational tempo, scheduling constraints, gym congestion, inconsistent leadership engagement, and uncertainty about effective training approaches all contributed to the problem. The change effort also carried broader organizational significance: because TRACEN Cape May shapes every enlisted Coast Guardsman entering the service, a culture shift at this access point could create long-term ripple effects across the entire workforce.</p>
+
+        <h2>My Role</h2>
+        <p>I served as part of a collaborative change management team. My specific contributions included:</p>
+        <ul>
+          <li>Conducting stakeholder interviews and synthesizing qualitative findings</li>
+          <li>Assisting with survey analysis and identifying organizational themes</li>
+          <li>Applying change management frameworks to the case</li>
+          <li>Developing implementation and evaluation recommendations</li>
+          <li>Translating organizational data into actionable change strategies</li>
+          <li>Supporting presentation development and delivery</li>
+        </ul>
+
+        <h2>Stakeholder Engagement &amp; Data Collection</h2>
+        <h3>Interviews</h3>
+        <p>The team conducted six stakeholder interviews representing multiple organizational perspectives, including executive leadership, department leadership, medical personnel, recruit support staff, and nutrition and wellness personnel. These surfaced operational barriers, leadership expectations, and sustainable-change opportunities.</p>
+
+        <h3>Survey Data</h3>
+        <p>A 97-response Morale, Well-Being, and Recreation (MWR) survey examined perceived barriers to fitness participation, preferred activities, motivators, and organizational support needs. The most important finding: time constraints, not motivation, were the primary barrier. This shifted the entire intervention away from individual willpower and toward organizational systems, scheduling, and leadership support.</p>
+
+        <h2>Change Management Frameworks</h2>
+        <h3>Kaleidoscope Model (Cameron &amp; Green, 2024)</h3>
+        <p>Assessed organizational readiness across time, capability, readiness, power, and preservation — ensuring recommendations aligned with operational realities without undermining the primary recruit training mission.</p>
+
+        <h3>ADKAR Model (Hiatt, 2006)</h3>
+        <p>Addressed individual-level adoption by framing physical readiness as professional identity and operational credibility, not just compliance. Focused on building Awareness, Desire, Knowledge, Ability, and Reinforcement across the command.</p>
+
+        <h2>Recommended Solutions</h2>
+        <ul>
+          <li>Protected, standardized workout time across all divisions</li>
+          <li>Monthly pop-up PFAs/PFTs to eliminate pre-test cramming</li>
+          <li>Increased leadership visibility and direct participation</li>
+          <li>Department-level fitness competitions and incentives</li>
+          <li>Standardized workout guidance and running routes</li>
+          <li>Improved dietician outreach and wellness resource visibility</li>
+          <li>Staggered gym access schedules to reduce congestion</li>
+          <li>Empowerment of supervisors to support schedule flexibility</li>
+        </ul>
+
+        <h2>Implementation Strategy</h2>
+        <h3>Phase 1, Alignment &amp; Communication</h3>
+        <p>Establish leadership expectations, communicate urgency, and define responsibilities across the command.</p>
+        <h3>Phase 2, Barrier Reduction &amp; Setup</h3>
+        <p>Identify division-level barriers and deploy targeted support resources.</p>
+        <h3>Phase 3, Active Implementation</h3>
+        <p>Launch structured fitness support systems, practice assessments, and inter-department competitions.</p>
+        <h3>Phase 4, Reinforcement &amp; Sustainment</h3>
+        <p>Monitor trends, reinforce leadership engagement, and sustain change beyond the July 2026 deadline.</p>
+
+        <h2>Evaluation</h2>
+        <h3>Short-Term Indicators</h3>
+        <ul>
+          <li>Increased awareness of PRP requirements</li>
+          <li>Greater leadership participation in fitness activities</li>
+          <li>Increased use of wellness and nutrition resources</li>
+          <li>Improved workout participation rates</li>
+          <li>Reduced barriers to training access</li>
+        </ul>
+        <h3>Long-Term Indicators</h3>
+        <ul>
+          <li>Sustained improvement in PFA/PFT pass rates</li>
+          <li>Elimination of pre-test cramming behaviors</li>
+          <li>Institutionalization of physical readiness expectations</li>
+          <li>TRACEN Cape May serving as a readiness model across the Coast Guard</li>
+        </ul>
+
+        <h2>Reflection</h2>
+        <p>This project reinforced the importance of approaching organizational change as both a systems problem and a human problem. The most important lesson: resistance is usually tied to structural barriers, not individual motivation. When people lack time, clear guidance, and leadership support, performance suffers, and adding more accountability pressure doesn't fix that.</p>
+        <p>The experience also strengthened my understanding of how leadership visibility, organizational culture, and employee support systems influence long-term adoption. As a Coast Guard member and performance improvement practitioner, this project highlighted the importance of designing change initiatives that are operationally realistic, culturally aligned, and sustainable over time.</p>
+
+        <h2>Skills Demonstrated</h2>
+        <div class="skills-demonstrated">
+          <span class="skill-tag">Change management</span>
+          <span class="skill-tag">Stakeholder engagement</span>
+          <span class="skill-tag">Organizational analysis</span>
+          <span class="skill-tag">Survey analysis</span>
+          <span class="skill-tag">Interview synthesis</span>
+          <span class="skill-tag">Systems thinking</span>
+          <span class="skill-tag">Performance improvement</span>
+          <span class="skill-tag">Data-informed decision making</span>
+          <span class="skill-tag">Strategic communication</span>
+          <span class="skill-tag">Team collaboration</span>
+        </div>
+
+        <h2>References</h2>
+        <ul class="ref-list">
+          <li>Cameron, E., &amp; Green, M. (2024). <em>Making sense of change management: A complete guide to the models, tools and techniques of organizational change</em> (6th ed.). Kogan Page.</li>
+          <li>Hiatt, J. M. (2006). <em>ADKAR: A model for change in business, government and our community.</em> Prosci Research.</li>
+        </ul>
+
+        <h2>Appendices</h2>
+        <ul class="appendix-list">
+          <li><a href="https://docs.google.com/presentation/d/1x6bD__FaECb2CdACSrWZIShnA9RtFrTC/edit?usp=sharing" target="_blank">TRACEN Cape May Change Management Presentation</a></li>
+          <li><a href="https://docs.google.com/document/d/1WFzRDSMqY5QiD5aaClczn-1IAr72-E8X/edit?usp=sharing" target="_blank">Change Management Proposal</a></li>
+          <li><a href="https://docs.google.com/document/d/1pvjmAhIi9wQ6EFh-KtaXJa6mZWXPUIPZ/edit?usp=sharing" target="_blank">Change Management Project Report</a></li>
+        </ul>
+
+      </div>
+    </div>
+  </section>
+</div>
+
+
+<!-- ══════════════════════════════════════
+     E-LEARNING PAGE
+══════════════════════════════════════ -->
+<div id="page-elearning" class="page">
+  <div class="page-hero">
+    <div class="container">
+      <div class="breadcrumb" onclick="showPage('home')">← Work Samples</div>
+      <div class="meta">E-Learning</div>
+      <h1>E-Learning Project</h1>
+    </div>
+  </div>
+  <section style="background:#fff;">
+    <div class="container">
+      <div class="prose">
+        <div class="placeholder-box">
+          <div class="placeholder-icon">📋</div>
+          <strong>Coming Soon</strong>
+          <p>This page is reserved for your e-learning project deliverable. Replace this section with your project overview, course context, design decisions, screenshots or a module embed, and a reflection on what you built and why.</p>
+          <p style="margin-top:1rem;">Use the structure from your other work sample pages as a template: overview → challenge → my role → design decisions → reflection → skills → appendices.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+</div>
+
+
+<!-- ══════════════════════════════════════
+     EVALUATION PAGE
+══════════════════════════════════════ -->
+<div id="page-evaluation" class="page">
+  <div class="page-hero">
+    <div class="container">
+      <div class="breadcrumb" onclick="showPage('home')">← Work Samples</div>
+      <div class="meta">OPWL 530, Evaluation</div>
+      <h1>U.S. Coast Guard EMT Recertification Program Evaluation</h1>
+    </div>
+  </div>
+  <section style="background:#fff;">
+    <div class="container">
+      <div class="prose">
+
+        <div class="callout">A formative, mixed-method evaluation examining whether the Coast Guard's distributed EMT recertification model adequately supports standardization, skill retention, and operational readiness across approximately 1,253 certified personnel, with roughly 627 requiring recertification annually.</div>
+
+        <h2>Background</h2>
+        <p>The USCG EMT Recertification Program supports operational medical readiness in environments where access to definitive care is limited, search and rescue missions, aviation operations, law enforcement, and afloat operations. Prior to COVID-19, recertification was conducted at TRACEN Petaluma through resident instruction and hands-on skills verification. During the pandemic, the Coast Guard transitioned to a distributed model centered on online CEUs and locally coordinated skills verification.</p>
+        <p>While the distributed model improved flexibility and reduced travel costs, concerns emerged around inconsistent verification practices and degradation of hands-on competency across the fleet. This evaluation was conducted as part of OPWL 530 to assess whether the current model is achieving its intended outcomes.</p>
+
+        <h2>Organization</h2>
+        <p>The United States Coast Guard is a military service and maritime law enforcement agency within the Department of Homeland Security, operating across all U.S. coastal regions, inland waterways, ports, and international maritime environments. Core missions include search and rescue, maritime law enforcement, environmental response, ports and waterways security, and defense readiness.</p>
+        <p>Because the Coast Guard operates with geographically dispersed units and relatively limited centralized training capacity, maintaining standardized training and readiness across the service presents unique operational challenges — particularly in emergency medical response programs where procedural consistency, psychomotor competency, and operational confidence directly affect mission execution and personnel safety.</p>
+        <p>The EMT Recertification Program is managed through Force Readiness Command (FORCECOM), Training Center Petaluma, the EMT Schoolhouse, and supporting medical oversight personnel throughout the fleet.</p>
+
+        <h2>Stakeholders</h2>
+        <h3>Primary Stakeholders</h3>
+        <ul>
+          <li>Force Readiness Command (FORCECOM)</li>
+          <li>TRACEN Petaluma Performance Systems Branch</li>
+          <li>EMT Schoolhouse leadership</li>
+          <li>National Registry of Emergency Medical Technicians (NREMT)</li>
+        </ul>
+        <h3>Direct Impactees</h3>
+        <ul>
+          <li>EMT-certified Coast Guard personnel (~1,253 total; ~627 recertifying annually)</li>
+          <li>Unit supervisors</li>
+          <li>Local evaluators, clinic staff, and Local EMT Medical Advisors (LEMAs)</li>
+        </ul>
+        <h3>Indirect Stakeholders</h3>
+        <ul>
+          <li>Operational crews and units</li>
+          <li>Patients and mission partners</li>
+          <li>The public supported through Coast Guard emergency response operations</li>
+        </ul>
+
+        <h2>Performance Need</h2>
+        <p>Leadership concerns emerged following the transition away from the resident recertification model. While the distributed approach improved flexibility and reduced travel demands, stakeholders reported increasing variability in how psychomotor skills verification was conducted across units. Additional concerns centered on evaluator preparation, documentation consistency, and whether the current model sufficiently maintained hands-on competency over time.</p>
+        <p>The evaluation was requested to determine: (1) whether EMT skills are being verified consistently across the fleet, (2) whether the current process adequately supports long-term skill retention and operational readiness, and (3) what improvements may strengthen standardization and readiness outcomes going forward.</p>
+
+        <h2>Evaluation Approach</h2>
+        <p>Using Chyung's (2019) 10-Step Evaluation framework, this project examined the EMT Recertification Program as a performance system rather than a single training event. The design also incorporated Brinkerhoff's Training Impact Model and critical multiplism to strengthen credibility through multiple complementary data sources.</p>
+        <p>The evaluation was designed as a formative, back-end, goal-based evaluation focused on program improvement. Data collection included policy and guidance document review, an anonymous Qualtrics survey, open-ended qualitative responses, and leadership interviews for program context.</p>
+
+        <h2>Evaluation Design</h2>
+        <h3>Dimension 1, Skill Verification Consistency</h3>
+        <p><em>To what extent are EMT skills verified in a standardized and reliable manner across units?</em></p>
+        <p>Focus areas: verifier authorization standards, documentation consistency, standardization of verification procedures, and communication of requirements.</p>
+
+        <h3>Dimension 2, Program Capability for Skill Retention</h3>
+        <p><em>To what extent does the current recertification model support ongoing knowledge retention, skill maintenance, and operational confidence?</em></p>
+        <p>Focus areas: hands-on competency, operational readiness, skill degradation, and access to meaningful practice opportunities.</p>
+
+        <h2>Results</h2>
+        <h3>Skill Verification Consistency</h3>
+        <p>The evaluation found a baseline policy framework for skills verification, but implementation across units remains inconsistent. Survey findings and qualitative responses revealed variability in evaluator preparation, documentation expectations, and execution of verification procedures. Key findings included:</p>
+        <ul>
+          <li>Moderate confidence in policy-level guidance</li>
+          <li>Lower confidence in consistency of execution across units</li>
+          <li>Significant concern regarding documentation variability</li>
+          <li>Frequent reports of difficulty locating qualified evaluators</li>
+        </ul>
+        <p>The current challenge is less about absent policy and more about inconsistent implementation across geographically dispersed units with limited oversight mechanisms.</p>
+
+        <h3>Program Capability for Skill Retention</h3>
+        <p>The evaluation found low confidence that the distributed model sufficiently supports long-term psychomotor skill retention. Respondents consistently identified limited hands-on practice as the primary driver of skill degradation. Key findings included:</p>
+        <ul>
+          <li>Low confidence in operational readiness support</li>
+          <li>Strong agreement that infrequent hands-on application contributes to skill degradation</li>
+          <li>Repeated recommendations for resident, exportable, or hybrid hands-on recertification opportunities</li>
+          <li>Concern that the current process prioritizes administrative compliance more effectively than operational proficiency</li>
+        </ul>
+
+        <h2>Conclusions &amp; Recommendations</h2>
+        <ul>
+          <li>Establish a formal verifier designation and preparation process</li>
+          <li>Standardize verification procedures and documentation requirements across units</li>
+          <li>Expand hands-on recertification opportunities through resident, exportable, or hybrid delivery</li>
+          <li>Improve communication and job aids for members, supervisors, and evaluators</li>
+          <li>Implement ongoing quality assurance tracking and process monitoring</li>
+        </ul>
+
+        <h2>Reflection</h2>
+        <p>This project strengthened my ability to evaluate complex performance systems operating across geographically dispersed environments. It reinforced the importance of designing evaluations that balance organizational constraints, stakeholder needs, and operational readiness requirements. Through this project I applied mixed-method evaluation practices, stakeholder-focused reporting, survey analysis, and qualitative synthesis within a real-world Coast Guard training environment. Most importantly, the experience reinforced how evaluation can serve as a practical decision-support tool — helping organizations move beyond compliance and toward measurable operational effectiveness.</p>
+
+        <h2>Skills Demonstrated</h2>
+        <div class="skills-demonstrated">
+          <span class="skill-tag">Program evaluation</span>
+          <span class="skill-tag">Mixed-method design</span>
+          <span class="skill-tag">Survey design (Qualtrics)</span>
+          <span class="skill-tag">Qualitative analysis</span>
+          <span class="skill-tag">Stakeholder reporting</span>
+          <span class="skill-tag">Performance systems thinking</span>
+          <span class="skill-tag">Data interpretation</span>
+        </div>
+
+        <h2>References</h2>
+        <ul class="ref-list">
+          <li>Chyung, S. Y. (2019). <em>10-Step Evaluation for Training and Performance Improvement.</em> Sage Publications.</li>
+          <li>National Registry of Emergency Medical Technicians. (2023). Recertification requirements. https://www.nremt.org</li>
+          <li>United States Coast Guard, Force Readiness Command. (2020). <em>EMT Recertification Course: Rapid Cost/Benefit Analysis.</em></li>
+        </ul>
+
+        <h2>Appendices</h2>
+        <ul class="appendix-list">
+          <li><a href="https://docs.google.com/document/d/11IWxtLpQcq8UfpkySVU5xQyqH6GxRbyT/edit?usp=sharing" target="_blank">Revised EMT Recertification Program Evaluation Final Report</a></li>
+          <li><a href="https://docs.google.com/document/d/1aHEPlu14_GCfhMNP1NXvoT50CLfgwYg7/edit?usp=sharing" target="_blank">U.S. Coast Guard EMT Recertification Program Evaluation Proposal</a></li>
+          <li><a href="https://docs.google.com/document/d/1QsZtzCXKE7mRdELA94R_9LGsqmrQK8pS/edit?usp=sharing" target="_blank">Instruments &amp; Rubrics</a></li>
+          <li><a href="https://docs.google.com/document/d/1SSIPgkbNwdL14AoP0cbqmtk5Cej951_7/edit?usp=sharing" target="_blank">Appendix B, Evaluation Development Worksheets</a></li>
+        </ul>
+
+      </div>
+    </div>
+  </section>
+</div>
+
+
+<!-- ══════════════════════════════════════
+     INSTRUCTIONAL DESIGN PAGE
+══════════════════════════════════════ -->
+<div id="page-id" class="page">
+  <div class="page-hero">
+    <div class="container">
+      <div class="breadcrumb" onclick="showPage('home')">← Work Samples</div>
+      <div class="meta">OPWL 537 — Instructional Design</div>
+      <h1>Emergency Drill Debrief Standardization — Idaho Youth Ranch</h1>
+    </div>
+  </div>
+  <section style="background:#fff;">
+    <div class="container">
+      <div class="prose">
+
+        <div class="callout">A performance support toolkit — not a training program — designed to help Idaho Youth Ranch managers facilitate consistent, structured emergency drill debriefs. Built on Gilbert's Behavior Engineering Model and cognitive load theory, the solution replaced a structural gap with practical tools at the point of performance.</div>
+
+        <h2>Background</h2>
+        <p>Our team partnered with Idaho Youth Ranch (IYR) to address a performance gap in emergency drill debriefs. Drills were conducted regularly to meet compliance requirements, but the debrief process was inconsistent, unstructured, and rarely produced meaningful documentation or follow-up. Program managers expressed low confidence in facilitating debriefs and a clear need for structure and guidance.</p>
+        <p>From the start, we approached this not as a training problem but as a performance systems issue. The goal wasn't to teach people how to run debriefs in a classroom — it was to support effective performance in real time. That reframe shaped every decision that followed.</p>
+
+        <h2>Analysis</h2>
+        <h3>Training Requirements Analysis (TRA)</h3>
+        <p>The TRA revealed that the primary gap was environmental, not motivational. Supervisors were willing to conduct debriefs but lacked clear expectations, structured guidance, and consistent tools. Framed through Gilbert's Behavior Engineering Model, this pointed directly to information and resource deficits, which shaped our decision to pursue performance support rather than instruction.</p>
+
+        <h3>Learner &amp; Environmental Analysis (LEA)</h3>
+        <p>Facilitators operate in dynamic, high-responsibility environments with limited time and divided attention. Staff bring varied experience levels, and the work environment requires adaptability, especially when balancing youth care with emergency preparedness. This reinforced the need for simple, accessible tools usable at the point of performance without reliance on recall.</p>
+
+        <h3>Task Analysis (TA)</h3>
+        <p>Successful debrief facilitation requires structured questioning, emotional intelligence, and systems thinking. Key tasks: initiating promptly, guiding reflection with structured prompts, maintaining psychological safety, identifying system-level gaps, and documenting follow-up items. Critically, the variability in facilitator experience was not a training problem to solve — it was a context constraint to design around. We needed tools that worked equally well for a novice and an expert manager.</p>
+
+        <h2>Design Decisions</h2>
+        <p>Rather than developing a traditional lesson plan, we designed a lightweight facilitation structure that functions as a real-time guide. The "lesson" occurs during the actual debrief itself, with learning embedded in practice.</p>
+        <p>Because facilitators operate under high cognitive load in time-pressured, 24/7 environments, we structured the guide around a minimal, predictable sequence — a direct application of cognitive load theory. Instead of asking managers to construct a facilitation approach on the fly, we offloaded that structure onto the tool. The four required reflection prompts were drawn directly from the TA task sequence and represent the minimum set of moves that distinguish a structured debrief from an unstructured conversation.</p>
+
+        <h2>Instructional Materials</h2>
+        <p>The final solution included three primary deliverables designed to work together as a cohesive performance support system:</p>
+        <ul>
+          <li><strong>Facilitator's guide</strong> — detailed step-by-step instructions including language for setting tone and prompting discussion; designed to transfer expert facilitation behavior to managers promoted from direct care roles</li>
+          <li><strong>One-page job aid</strong> — distills the guide into a single landscape page usable during a live session; reduces cognitive demand in the moment</li>
+          <li><strong>Documentation form</strong> — ensures lessons learned, root causes, and follow-up actions are captured consistently and tied to Joint Commission compliance requirements</li>
+        </ul>
+        <p>All materials were intentionally simple, practical, and immediately usable without additional training. All reinforce a systems-focused approach — encouraging facilitators to examine processes and conditions rather than individual performance.</p>
+
+        <h2>Reflection</h2>
+        <p>This project reinforced the importance of starting with the problem, not the solution. Early on, it would have been easy to assume that training was needed. However, by working through the analysis process, we developed a clearer picture of the system and recognized that the real issue was a lack of structure and tools, not a lack of knowledge or motivation. That shift did not happen all at once. There was a point mid-project where we had to revisit our initial scope after formative feedback surfaced that our draft materials were more complex than the environment could support. Scaling back felt uncomfortable at the time, but it was the right call, and the final toolkit is stronger for it.</p>
+        <p>One of the most valuable takeaways was the role of constraints in shaping design decisions. The operational environment at IYR required solutions that were simple, fast, and adaptable. This forced us to prioritize clarity and usability over completeness — a lesson we expect to carry into every future project.</p>
+        <p>We also learned how critical it is to align all components of a project. The analyses, instructional materials, and assessment approach must all point to the same performance outcome. In this case, the job aid, facilitator's guide, and documentation form all work together as a cohesive system to support and capture performance in the field.</p>
+        <p>Finally, this project strengthened our ability to think like performance improvement professionals rather than just instructional designers — more intentional about questioning assumptions, considering environmental factors, and designing solutions that fit within the realities of the workplace.</p>
+        <p><em>A note on GenAI use:</em> Our team used AI tools, including Claude, during the brainstorming and drafting phases. We used AI to organize ideas, stress-test our rationale against course frameworks, and refine language in deliverables. All outputs were reviewed, revised, and verified by team members against analysis data and client context. The thinking, design decisions, and professional judgments reflected in this portfolio are our own.</p>
+
+        <h2>Skills Demonstrated</h2>
+        <div class="skills-demonstrated">
+          <span class="skill-tag">Performance support design</span>
+          <span class="skill-tag">Task analysis</span>
+          <span class="skill-tag">Learner analysis</span>
+          <span class="skill-tag">Gilbert's BEM</span>
+          <span class="skill-tag">Cognitive load theory</span>
+          <span class="skill-tag">Job aid design</span>
+          <span class="skill-tag">Client collaboration</span>
+          <span class="skill-tag">Systems thinking</span>
+        </div>
+
+        <h2>Appendices</h2>
+        <ul class="appendix-list">
+          <li><a href="https://docs.google.com/document/d/1S6S9iH0UUQ1RTpR_Gfc4gH8jT-sw0ken/edit?usp=sharing" target="_blank">Emergency Drill Debrief Toolkit</a></li>
+          <li><a href="https://docs.google.com/document/d/1vA7ztbvS_sSgm2xUX1xpsc2oEGFN7FxF0dWDCOoKSBg/edit?usp=sharing" target="_blank">TRA, LEA, and Task Analysis</a></li>
+          <li><a href="https://docs.google.com/document/d/1hUfF7WcHBU5dxa6P2cmzmdiw6c9xHSDFcqBhlrXPuA8/edit?usp=sharing" target="_blank">Performance Assessment (PA)</a></li>
+          <li><a href="https://docs.google.com/document/d/1BEav-XvQoKbcfv_wa0witNlzrvc0ixN3T0A62Mx9RFM/edit?usp=sharing" target="_blank">IYR Debriefing Statement of Work</a></li>
+        </ul>
+
+      </div>
+    </div>
+  </section>
+</div>
+
+
+<!-- ══════════════════════════════════════
+     NEEDS ASSESSMENT PAGE
+══════════════════════════════════════ -->
+<div id="page-needs" class="page">
+  <div class="page-hero">
+    <div class="container">
+      <div class="breadcrumb" onclick="showPage('home')">← Work Samples</div>
+      <div class="meta">OPWL 529, Needs Assessment</div>
+      <h1>Boise State OPWL Industry Mentoring Program</h1>
+    </div>
+  </div>
+  <section style="background:#fff;">
+    <div class="container">
+      <div class="prose">
+
+        <div class="callout">A mixed-method needs assessment examining the gap between academic preparation and workplace readiness for OPWL graduates. The project identified interconnected environmental, structural, and individual causes, and recommended a scalable industry mentoring program to bridge the divide.</div>
+
+        <h2>The Challenge</h2>
+        <p>The OPWL program at Boise State prepares professionals to analyze, design, and improve workplace learning and performance. But a persistent gap emerged between academic preparation and workplace readiness, especially for career changers and students without prior industry experience.</p>
+        <p>Students reported difficulty translating classroom concepts into real organizational settings, uncertainty about practitioner expectations, career pathways, and how to apply frameworks like Gilbert's BEM, Rummler and Brache's Nine Boxes, and Kirkpatrick's evaluation model within professional environments. No formal mentoring structure existed to bridge this gap systematically.</p>
+
+        <h2>Methods</h2>
+        <h3>Faculty Interviews</h3>
+        <p>Semi-structured interviews with OPWL faculty and program leadership identified organizational concerns, student readiness challenges, workforce expectations, and implementation constraints.</p>
+
+        <h3>Student Survey</h3>
+        <p>A Qualtrics survey distributed to current students (n = 33) collected data on mentoring needs, barriers, professional development concerns, and preferred support structures. Key findings:</p>
+        <ul>
+          <li>Career navigation support was the highest-rated student need</li>
+          <li>Students needed more help translating coursework into workplace application</li>
+          <li>Portfolio and résumé development support was a significant concern</li>
+          <li>Most preferred mentors actively working in their desired field</li>
+          <li>Flexible engagement was strongly preferred due to workload and scheduling constraints</li>
+        </ul>
+
+        <h3>Document &amp; Pilot Program Analysis</h3>
+        <p>Review of extant program documentation, enrollment demographics, and pilot mentoring materials provided insight into implementation lessons, operational constraints, and opportunities for scalability.</p>
+
+        <h2>Frameworks Applied</h2>
+        <p>The analysis drew on Gilbert's Behavior Engineering Model, Rummler and Brache's Nine Boxes, the Gap Model of Service Quality, and the CIPP Evaluation Framework — supporting analysis across organizational, environmental, process, and performer dimensions.</p>
+
+        <h2>Root Causes</h2>
+        <ul>
+          <li><strong>Information gaps</strong>, students lacked exposure to organizational environments and practitioner expectations; coursework alone insufficient for workplace translation</li>
+          <li><strong>Resource gaps</strong>, no formal mentoring structure; limited access to experienced practitioners and structured networking opportunities</li>
+          <li><strong>Confidence and motivation challenges</strong>, imposter syndrome, career transition anxiety, and unclear practitioner identity reduced confidence</li>
+          <li><strong>Process and structural gaps</strong>, no standardized workflows for mentor recruitment, matching, or engagement expectations</li>
+          <li><strong>Capacity constraints</strong>, working professionals required flexible, lightweight structures to participate as mentors</li>
+        </ul>
+
+        <h2>Recommended Solutions</h2>
+        <h3>Structured 1:1 Mentoring</h3>
+        <p>Monthly touchpoints pairing students with alumni or practitioners based on career interests and professional goals. Designed to address career navigation uncertainty, coursework-to-practice translation, and confidence development.</p>
+
+        <h3>Portfolio &amp; Career Artifact Support</h3>
+        <p>Dedicated support for translating academic projects into professional portfolios, résumés, and LinkedIn profiles, identified as a critical component of career readiness and employability.</p>
+
+        <h3>Communities of Practice</h3>
+        <p>Peer-based communities to reduce mentor burden while creating collaborative learning environments around workplace scenarios and professional challenges.</p>
+
+        <h3>Networking &amp; Alumni Engagement</h3>
+        <p>Virtual networking sessions, alumni spotlights, and industry panels to increase professional exposure and strengthen long-term program community.</p>
+
+        <h3>Resource Library</h3>
+        <p>A centralized repository of career guidance materials, portfolio examples, and professional development tools to support self-directed learning.</p>
+
+        <h2>Skills Demonstrated</h2>
+        <div class="skills-demonstrated">
+          <span class="skill-tag">Needs assessment</span>
+          <span class="skill-tag">Mixed-method research</span>
+          <span class="skill-tag">Survey design (Qualtrics)</span>
+          <span class="skill-tag">Interview analysis</span>
+          <span class="skill-tag">Root cause analysis</span>
+          <span class="skill-tag">Performance gap analysis</span>
+          <span class="skill-tag">Stakeholder reporting</span>
+          <span class="skill-tag">Program design</span>
+        </div>
+
+        <h2>References</h2>
+        <ul class="ref-list">
+          <li>Chyung, S. Y. (2019). <em>10-step evaluation for training and performance improvement.</em> SAGE Publications.</li>
+          <li>Gilbert, T. F. (1978). <em>Human competence: Engineering worthy performance.</em> McGraw-Hill.</li>
+          <li>Rothwell, W. J. (2015). <em>Beyond training and development</em> (4th ed.). AMACOM.</li>
+          <li>Rothwell, W. J., Imroz, S. M., &amp; Bakhshandeh, B. (2021). <em>Organization development interventions: Managing effective change in dynamic organizations.</em> Routledge.</li>
+          <li>Rothwell, W. J., Stavros, J. M., &amp; Sullivan, R. L. (2016). <em>Practicing organization development: Leading transformation and change</em> (4th ed.). Wiley.</li>
+          <li>Rummler, G. A., &amp; Brache, A. P. (1995). <em>Improving performance</em> (2nd ed.). Jossey-Bass.</li>
+        </ul>
+
+        <h2>Appendices</h2>
+        <ul class="appendix-list">
+          <li><a href="https://docs.google.com/presentation/d/19F_Ivi9VvrBm9Lj3ArS4e-OPCBkU74md/edit?usp=sharing" target="_blank">Appendix A, Needs Assessment Executive Briefing Presentation</a></li>
+          <li><a href="https://docs.google.com/document/d/1QHvVG86Z7DFTlj8DHp1k_xRYzwH5O2di/edit?usp=sharing" target="_blank">Appendix B, Boise State University OPWL Industry Mentoring Program Final Report</a></li>
+          <li><a href="https://docs.google.com/spreadsheets/d/1d7_ESthcpeRqDH2N9sjBHCJW2zXY7eOj/edit?usp=sharing" target="_blank">Appendix C, Coding Workbook</a></li>
+          <li><a href="https://docs.google.com/document/d/1PTZk9Ciknioe-YuNQb27JZCjE7gocUxu/edit?usp=sharing" target="_blank">Appendix D, Project Plan</a></li>
+          <li><a href="https://docs.google.com/document/d/1s1rmoPzK3GxMDpQaOQl50cG8f8sB-3WB/edit?usp=sharing" target="_blank">Appendix E, OPWL Industry Mentoring Codebook</a></li>
+        </ul>
+
+      </div>
+    </div>
+  </section>
+</div>
+
+
+<!-- ══════════════════════════════════════
+     WORKPLACE PERFORMANCE PAGE
+══════════════════════════════════════ -->
+<div id="page-wp" class="page">
+  <div class="page-hero">
+    <div class="container">
+      <div class="breadcrumb" onclick="showPage('home')">← Work Samples</div>
+      <div class="meta">OPWL 560, Workplace Performance</div>
+      <h1>Personal Performance Improvement Framework</h1>
+    </div>
+  </div>
+  <section style="background:#fff;">
+    <div class="container">
+      <div class="prose">
+
+        <div class="callout">A culminating practitioner framework integrating Human Performance Improvement and Organization Development principles, designed not as a theoretical model but as a practical, living guide for performance analysis, intervention selection, and organizational change work in real environments.</div>
+
+        <h2>Project Overview</h2>
+        <p>This project involved the development of a personal Human Performance Improvement (HPI) and Organization Development (OD) framework designed to guide performance analysis, intervention selection, and organizational change efforts in real-world environments. The framework was created as a culminating assignment in OPWL 560 and reflects my evolving philosophy as a performance improvement practitioner.</p>
+        <p>The goal was not to create a theoretical model, but to build a practical tool that can support future consulting, evaluation, and organizational improvement work. Drawing from both HPI and OD principles, the framework emphasizes diagnostic discipline, systems thinking, stakeholder engagement, and sustainable implementation.</p>
+        <p>The framework was heavily influenced by operational leadership experiences in the Coast Guard, where performance issues are frequently framed as training problems even when root causes involve leadership alignment, environmental barriers, communication breakdowns, or organizational culture.</p>
+
+        <h2>The Challenge</h2>
+        <p>One of the recurring challenges in operational and organizational environments is the tendency to move directly to solutions before adequately diagnosing the actual problem. Training is frequently selected as the default intervention, even when performance gaps are caused by unclear expectations, process failures, environmental constraints, leadership misalignment, or cultural issues.</p>
+        <p>This project challenged me to create a structured methodology that slows down premature solutioning and supports evidence-based decision-making. The framework needed to:</p>
+        <ul>
+          <li>Distinguish between HPI and OD approaches and clarify when each is most appropriate</li>
+          <li>Provide a practical decision-making structure</li>
+          <li>Support root cause analysis before intervention selection</li>
+          <li>Balance analytical rigor with organizational realities</li>
+          <li>Remain flexible enough for real-world application</li>
+        </ul>
+
+        <h2>Framework Design</h2>
+        <p>The framework was developed through analysis and integration of HPI and OD literature, combined with reflection on operational leadership experiences. Key concepts incorporated include Gilbert's Behavior Engineering Model, systems thinking, root cause analysis, stakeholder analysis, organizational readiness assessment, change management principles, and continuous improvement.</p>
+
+        <h3>Practitioner Purpose Statement</h3>
+        <p>A foundational statement establishing my philosophy as a practitioner focused on understanding problems fully before recommending solutions.</p>
+
+        <h3>Situational Assessment Model</h3>
+        <p>A five-stage diagnostic process: (1) define the performance gap, (2) gather data, (3) conduct root cause analysis, (4) assess stakeholders and readiness, (5) synthesize findings.</p>
+
+        <h3>Decision Map</h3>
+        <p>A structured approach for determining whether an HPI-dominant, OD-dominant, or blended strategy is most appropriate for a given situation.</p>
+
+        <h3>Intervention Planning Guide</h3>
+        <p>A practical tool mapping common organizational problems to potential intervention strategies.</p>
+
+        <h3>Reflection and Development Section</h3>
+        <p>A self-assessment component identifying areas for future practitioner growth and framework revision.</p>
+
+        <h2>HPI and OD Integration</h2>
+        <p>One of the central goals was demonstrating how HPI and OD complement one another rather than compete. HPI contributes diagnostic rigor, root cause analysis, performance measurement, and systems analysis. OD contributes stakeholder engagement, change readiness, trust-building, leadership alignment, and organizational culture awareness.</p>
+        <p>The framework recognizes that many organizational problems require both approaches simultaneously. In practice, technically correct interventions often fail when organizations are not culturally or operationally prepared to support implementation.</p>
+
+        <h2>Key Takeaways</h2>
+        <ul>
+          <li>Most performance problems are more complex than they initially appear</li>
+          <li>Premature intervention selection can create additional organizational problems</li>
+          <li>Training is often overused as a default solution</li>
+          <li>Leadership alignment and organizational readiness significantly influence implementation success</li>
+          <li>Sustainable performance improvement requires both technical and relational approaches</li>
+          <li>Diagnostic discipline is one of the most important responsibilities of a practitioner</li>
+        </ul>
+
+        <h2>Application to Practice</h2>
+        <p>I intend to use this framework as a living practitioner guide throughout future performance improvement and organizational development work. It is designed to evolve through real-world application, reflection after engagements, continued academic study, and feedback from stakeholders and clients. Future revisions will include expanded evaluation guidance, leadership engagement strategies, organizational readiness measures, and additional intervention planning tools.</p>
+
+        <h2>Skills Demonstrated</h2>
+        <div class="skills-demonstrated">
+          <span class="skill-tag">HPI methodology</span>
+          <span class="skill-tag">Organization development</span>
+          <span class="skill-tag">Systems thinking</span>
+          <span class="skill-tag">Root cause analysis</span>
+          <span class="skill-tag">Diagnostic analysis</span>
+          <span class="skill-tag">Intervention selection</span>
+          <span class="skill-tag">Stakeholder analysis</span>
+          <span class="skill-tag">Organizational readiness</span>
+          <span class="skill-tag">Practitioner framework design</span>
+        </div>
+
+        <h2>References</h2>
+        <ul class="ref-list">
+          <li>Gilbert, T. F. (2007). <em>Human competence: Engineering worthy performance</em> (Tribute ed.). Pfeiffer. (Original work published 1978).</li>
+          <li>Rothwell, W. J., Imroz, S. M., &amp; Bakhshandeh, B. (Eds.). (2021). <em>Organization development interventions.</em> CRC Press.</li>
+          <li>Rothwell, W. J., Stavros, J. M., &amp; Sullivan, R. L. (2016). <em>Practicing organization development: Leading transformation and change</em> (4th ed.). Wiley.</li>
+        </ul>
+
+        <h2>Appendices</h2>
+        <ul class="appendix-list">
+          <li><a href="https://docs.google.com/document/d/15fdCxA5K3aiqktVZldW5qTGRZytMLh2U/edit?usp=sharing" target="_blank">Personal Performance Improvement Framework</a></li>
+        </ul>
+
+      </div>
+    </div>
+  </section>
+</div>
+
+
+<!-- ══════════════════════════════════════
+     OPWL PROGRAM GOALS PAGE
+══════════════════════════════════════ -->
+<div id="page-opwl" class="page">
+  <div class="page-hero">
+    <div class="container">
+      <div class="breadcrumb" onclick="showPage('home')">← Work Samples</div>
+      <div class="meta">Boise State OPWL Program</div>
+      <h1>Program Goals &amp; Professional Growth</h1>
+    </div>
+  </div>
+  <section style="background:#fff;">
+    <div class="container">
+      <div class="prose">
+
+        <div class="callout">A personal reflection on why I pursued the OPWL program, what it changed about how I work, and where I'm headed as a performance improvement professional. Not a course summary, a practitioner's honest account of growth.</div>
+
+        <h2>The Problem I Was Already Trying to Solve</h2>
+        <p>Before I enrolled at Boise State, I was already doing this work. As a Human Performance Specialist at Training Center Petaluma, I was evaluating Coast Guard schoolhouses, interviewing instructors and students, identifying gaps, and writing recommendations. I'd been doing versions of it for years, as a QA Division Chief, as a Flight Engineer, as anyone senior enough to be responsible for other people's performance.</p>
+        <p>But I was doing it mostly on instinct. I had operational credibility and two decades of pattern recognition, but I didn't have a systematic way to distinguish between a training problem, an information problem, a resource problem, or a leadership problem. I was often right about the diagnosis, but I couldn't always defend why, and I knew that mattered if I wanted to do this work at a higher level.</p>
+        <p>That's what brought me to OPWL. Not a career change. A sharpening.</p>
+
+        <h2>What the Program Actually Changed</h2>
+
+        <h3>I stopped assuming training was the answer</h3>
+        <p>The single most valuable shift the OPWL program produced in me was methodological discipline around cause analysis. Gilbert's Behavior Engineering Model gave me a framework I now use reflexively: before recommending any intervention, I ask whether the gap is caused by a lack of information, resources, incentives, capacity, motives, or knowledge. Most of the time, it's not knowledge. That realization changes everything downstream, the intervention, the budget, the timeline, the stakeholders you need.</p>
+        <p>The Idaho Youth Ranch instructional design project made this concrete. The obvious solution was a training program on how to run debriefs. The right solution was a one-page job aid and a facilitator guide. Different problem. Better outcome. Less cost.</p>
+
+        <h3>I learned to evaluate, not just assess</h3>
+        <p>I came in thinking I knew how to evaluate programs. I'd been doing Level 1 and Level 3 evaluations at TRACEN Petaluma for two years. What OPWL 530 taught me was how much structure I was missing, how to define evaluation questions precisely, how to select methods that actually answer those questions, and how to report findings in ways that drive decisions rather than just document observations.</p>
+        <p>The EMT Recertification evaluation project was the clearest demonstration of that growth. I applied Chyung's 10-Step framework to a program I have direct operational experience with, and the rigor of the process surfaced findings I genuinely hadn't anticipated, particularly around how the distributed model had quietly shifted the program's emphasis from competency to compliance without anyone explicitly deciding that's what they wanted.</p>
+
+        <h3>I learned to see change as a system, not an event</h3>
+        <p>OPWL 577 reframed how I think about organizational change. I'd led plenty of transitions in the Coast Guard, new maintenance procedures, new training requirements, new leadership, and I understood intuitively that announcement doesn't equal adoption. What the Kaleidoscope Model and ADKAR gave me was a way to diagnose where change was failing and design targeted support for each failure point.</p>
+        <p>The TRACEN Cape May project confirmed something I suspected: when organizations have a fitness problem, the instinct is to hold people accountable. When you actually talk to people and look at the data, the problem is almost always structural. Not enough time. Not enough guidance. Not enough visible leadership support. Accountability without infrastructure is just pressure, and pressure without support produces avoidance, not performance.</p>
+
+        <h3>I developed a research identity</h3>
+        <p>OPWL 529 was the course that surprised me most. I didn't expect to find needs assessment intellectually engaging, I expected it to be procedural. Instead, the mixed-method research process became something I genuinely enjoy. Designing instruments, synthesizing qualitative and quantitative data, building a case from evidence, it turns out this is exactly the kind of thinking I've been trying to do operationally for years, just without the methodological foundation to do it rigorously.</p>
+        <p>The mentoring program needs assessment also gave me something personal: a mirror. I was assessing the gap between academic preparation and workplace readiness for OPWL graduates, and realizing that the program I was enrolled in was, imperfectly, trying to close the same gap for me.</p>
+
+        <h2>Where I'm Headed</h2>
+        <p>I'm not trying to leave the Coast Guard and become a consultant. I'm trying to become the kind of senior leader who brings rigorous performance improvement thinking into every role I hold — whether that's a training command, a district staff position, or eventually a post-service career in organizational consulting or federal human capital work.</p>
+        <p>The through-line across everything in this portfolio is the same: diagnose before you prescribe. Understand the system before you redesign any part of it. And resist the pull toward training as the default solution when the problem is environmental, structural, or motivational.</p>
+        <p>That's not just an OPWL lesson. It's what twenty years of watching organizations succeed and fail has taught me. OPWL gave me the language and the discipline to act on it.</p>
+
+        <p style="color: var(--text-faint); font-style: italic; margin-top: 2rem;">This portfolio will be updated as additional coursework is completed. Expected graduation: Summer 2026.</p>
+
+      </div>
+    </div>
+  </section>
+</div>
+
+
+<!-- ══════════════════════════════════════
+     RESUME PAGE
+══════════════════════════════════════ -->
+<div id="page-resume" class="page">
+  <div class="page-hero">
+    <div class="container">
+      <div class="breadcrumb" onclick="showPage('home')">← Home</div>
+      <div class="meta">Curriculum Vitae</div>
+      <h1>Resume</h1>
+    </div>
+  </div>
+
+  <section style="background:#f5f6f8; padding: 2rem 0;">
+    <div class="container" style="max-width:820px;">
+      <div style="display:flex; justify-content:flex-end; gap:10px; margin-bottom:1.25rem;">
+        <button onclick="window.print()" style="font-family:'DM Sans',sans-serif; font-size:13px; font-weight:500; padding:8px 18px; border-radius:8px; border:1px solid var(--border); background:var(--white); color:var(--text); cursor:pointer; display:flex; align-items:center; gap:6px;">
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="6 9 6 2 18 2 18 9"/><path d="M6 18H4a2 2 0 0 1-2-2v-5a2 2 0 0 1 2-2h16a2 2 0 0 1 2 2v5a2 2 0 0 1-2 2h-2"/><rect x="6" y="14" width="12" height="8"/></svg>
+          Print / Save PDF
+        </button>
+      </div>
+
+      <!-- ── RESUME DOCUMENT ── -->
+      <div id="resume-doc" style="background:var(--white); border:1px solid var(--border); border-radius:var(--radius-lg); padding: 3rem 3.5rem; font-family:'DM Sans',sans-serif;">
+
+        <!-- Header -->
+        <div style="border-bottom: 2px solid var(--navy); padding-bottom: 1.25rem; margin-bottom: 1.5rem;">
+          <div style="display:flex; justify-content:space-between; align-items:flex-end; flex-wrap:wrap; gap:1rem;">
+            <div>
+              <h1 style="font-family:'DM Serif Display',serif; font-size:34px; line-height:1.05; color:var(--navy); margin-bottom:4px;">Blake George</h1>
+              <div style="font-size:13px; font-weight:500; letter-spacing:0.1em; text-transform:uppercase; color:var(--text-muted);">Performance Systems &amp; Training Specialist</div>
+            </div>
+            <div style="text-align:right; font-size:13px; color:var(--text-muted); line-height:1.8;">
+              <div><a href="mailto:kristoferblake@gmail.com" style="color:var(--navy-mid);text-decoration:none;">kristoferblake@gmail.com</a></div>
+              <div><a href="tel:3036387210" style="color:var(--navy-mid);text-decoration:none;">(303) 638-7210</a></div>
+              <div>Petaluma, CA</div>
+              <div><a href="https://www.linkedin.com/in/christopher-blake-george-mba-pmp-2a17a564" target="_blank" style="color:var(--navy-mid);text-decoration:none;">LinkedIn Profile</a></div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Summary -->
+        <div style="margin-bottom:1.75rem;">
+          <p style="font-size:14px; line-height:1.75; color:var(--text-muted);">Senior Chief (E-8) in the U.S. Coast Guard with over 20 years of experience in aviation maintenance, training, and performance systems. Human performance practitioner specializing in needs assessment, program evaluation, instructional design, and change management. Proven ability to diagnose root causes of performance gaps and design targeted, evidence-based solutions that improve readiness and deliver measurable outcomes across large, geographically dispersed organizations.</p>
+        </div>
+
+        <!-- Section: Experience -->
+        <div style="margin-bottom:1.75rem;">
+          <div style="font-size:11px; font-weight:500; letter-spacing:0.12em; text-transform:uppercase; color:var(--navy); border-bottom:1px solid var(--border); padding-bottom:4px; margin-bottom:1rem;">Professional Experience</div>
+
+          <!-- OPWL -->
+          <div style="margin-bottom:1.25rem;">
+            <div style="display:flex; justify-content:space-between; align-items:baseline; flex-wrap:wrap; gap:4px;">
+              <span style="font-size:14px; font-weight:500; color:var(--text);">Graduate Student, M.S. Organizational Performance &amp; Workplace Learning</span>
+              <span style="font-size:12px; color:var(--text-faint); white-space:nowrap;">Aug 2025 – Present</span>
+            </div>
+            <div style="font-size:13px; color:var(--text-muted); margin-bottom:6px; font-style:italic;">Boise State University · Petaluma, CA</div>
+            <ul style="list-style:none; padding:0; margin:0;">
+              <li style="font-size:13px; color:var(--text-muted); line-height:1.6; padding-left:14px; position:relative; margin-bottom:3px;"><span style="position:absolute;left:0;">–</span>Applying ADDIE, Gilbert's BEM, Kirkpatrick, and Chyung evaluation frameworks to real organizational performance challenges</li>
+              <li style="font-size:13px; color:var(--text-muted); line-height:1.6; padding-left:14px; position:relative; margin-bottom:3px;"><span style="position:absolute;left:0;">–</span>Completing graduate certificates in Workplace Performance Improvement and Workplace Instructional Design</li>
+            </ul>
+          </div>
+
+          <!-- TRACEN Petaluma -->
+          <div style="margin-bottom:1.25rem;">
+            <div style="display:flex; justify-content:space-between; align-items:baseline; flex-wrap:wrap; gap:4px;">
+              <span style="font-size:14px; font-weight:500; color:var(--text);">Human Performance Specialist / Evaluation Officer</span>
+              <span style="font-size:12px; color:var(--text-faint); white-space:nowrap;">Jun 2023 – Aug 2025</span>
+            </div>
+            <div style="font-size:13px; color:var(--text-muted); margin-bottom:6px; font-style:italic;">Training Center Petaluma, Performance Systems Branch · Petaluma, CA</div>
+            <ul style="list-style:none; padding:0; margin:0;">
+              <li style="font-size:13px; color:var(--text-muted); line-height:1.6; padding-left:14px; position:relative; margin-bottom:3px;"><span style="position:absolute;left:0;">–</span>Led Level 1 (reaction) and Level 3 (behavior) evaluations across 40+ Coast Guard schoolhouses to assess training effectiveness and on-the-job performance</li>
+              <li style="font-size:13px; color:var(--text-muted); line-height:1.6; padding-left:14px; position:relative; margin-bottom:3px;"><span style="position:absolute;left:0;">–</span>Conducted human performance analyses to identify root causes of performance gaps across training, environment, and organizational systems</li>
+              <li style="font-size:13px; color:var(--text-muted); line-height:1.6; padding-left:14px; position:relative; margin-bottom:3px;"><span style="position:absolute;left:0;">–</span>Designed and implemented mixed-method evaluation plans using surveys (Qualtrics), interviews, and document review</li>
+              <li style="font-size:13px; color:var(--text-muted); line-height:1.6; padding-left:14px; position:relative;"><span style="position:absolute;left:0;">–</span>Delivered actionable findings and recommendations to senior leadership to improve training delivery and system performance</li>
+            </ul>
+          </div>
+
+          <!-- Port Angeles -->
+          <div style="margin-bottom:1.25rem;">
+            <div style="display:flex; justify-content:space-between; align-items:baseline; flex-wrap:wrap; gap:4px;">
+              <span style="font-size:14px; font-weight:500; color:var(--text);">Maintenance Chief / Quality Assurance Division Chief</span>
+              <span style="font-size:12px; color:var(--text-faint); white-space:nowrap;">Sep 2019 – Jun 2023</span>
+            </div>
+            <div style="font-size:13px; color:var(--text-muted); margin-bottom:6px; font-style:italic;">Air Station Port Angeles, MH-65E Dolphin · Port Angeles, WA</div>
+            <ul style="list-style:none; padding:0; margin:0;">
+              <li style="font-size:13px; color:var(--text-muted); line-height:1.6; padding-left:14px; position:relative; margin-bottom:3px;"><span style="position:absolute;left:0;">–</span>Led maintenance operations and long-term readiness planning for MH-65E aircraft</li>
+              <li style="font-size:13px; color:var(--text-muted); line-height:1.6; padding-left:14px; position:relative;"><span style="position:absolute;left:0;">–</span>Enforced maintenance standards, conducted audits and inspections, and ensured compliance with USCG and FAA regulations</li>
+            </ul>
+          </div>
+
+          <!-- Barbers Point -->
+          <div style="margin-bottom:1.25rem;">
+            <div style="display:flex; justify-content:space-between; align-items:baseline; flex-wrap:wrap; gap:4px;">
+              <span style="font-size:14px; font-weight:500; color:var(--text);">Basic Aircrew / Flight Engineer (in training) · Engine Shop Supervisor</span>
+              <span style="font-size:12px; color:var(--text-faint); white-space:nowrap;">Aug 2017 – Sep 2019</span>
+            </div>
+            <div style="font-size:13px; color:var(--text-muted); margin-bottom:6px; font-style:italic;">Air Station Barbers Point, HC-130H Hercules · Barbers Point, HI</div>
+            <ul style="list-style:none; padding:0; margin:0;">
+              <li style="font-size:13px; color:var(--text-muted); line-height:1.6; padding-left:14px; position:relative;"><span style="position:absolute;left:0;">–</span>Supervised engine shop operations; maintained aircraft readiness and trained personnel to safety and quality standards</li>
+            </ul>
+          </div>
+
+          <!-- DC -->
+          <div style="margin-bottom:1.25rem;">
+            <div style="display:flex; justify-content:space-between; align-items:baseline; flex-wrap:wrap; gap:4px;">
+              <span style="font-size:14px; font-weight:500; color:var(--text);">Flight Engineer · Senior Enlisted Flight Examining Board (EFEB) Member</span>
+              <span style="font-size:12px; color:var(--text-faint); white-space:nowrap;">Jul 2012 – Aug 2017</span>
+            </div>
+            <div style="font-size:13px; color:var(--text-muted); margin-bottom:6px; font-style:italic;">CG Air Station Washington D.C., Gulfstream G5/G550 · Washington, D.C.</div>
+            <ul style="list-style:none; padding:0; margin:0;">
+              <li style="font-size:13px; color:var(--text-muted); line-height:1.6; padding-left:14px; position:relative; margin-bottom:3px;"><span style="position:absolute;left:0;">–</span>Flew executive transport missions supporting senior DHS and USCG officials in a high-visibility, no-fail environment</li>
+              <li style="font-size:13px; color:var(--text-muted); line-height:1.6; padding-left:14px; position:relative;"><span style="position:absolute;left:0;">–</span>Trained and evaluated aircrew qualification and readiness standards as senior Enlisted Flight Examining Board (EFEB) member</li>
+            </ul>
+          </div>
+
+          <!-- SF -->
+          <div style="margin-bottom:1.25rem;">
+            <div style="display:flex; justify-content:space-between; align-items:baseline; flex-wrap:wrap; gap:4px;">
+              <span style="font-size:14px; font-weight:500; color:var(--text);">Helicopter Flight Mechanic</span>
+              <span style="font-size:12px; color:var(--text-faint); white-space:nowrap;">May 2008 – Jul 2012</span>
+            </div>
+            <div style="font-size:13px; color:var(--text-muted); margin-bottom:6px; font-style:italic;">Air Station San Francisco, MH-65C Dolphin · San Francisco, CA</div>
+            <ul style="list-style:none; padding:0; margin:0;">
+              <li style="font-size:13px; color:var(--text-muted); line-height:1.6; padding-left:14px; position:relative; margin-bottom:3px;"><span style="position:absolute;left:0;">–</span>Flew as crew on search and rescue and maritime law enforcement missions over San Francisco Bay, the Pacific Coast, and Northern California inland waterways</li>
+              <li style="font-size:13px; color:var(--text-muted); line-height:1.6; padding-left:14px; position:relative; margin-bottom:3px;"><span style="position:absolute;left:0;">–</span>Performed scheduled and unscheduled maintenance on four MH-65C Dolphin helicopters in a high-tempo operational environment</li>
+              <li style="font-size:13px; color:var(--text-muted); line-height:1.6; padding-left:14px; position:relative;"><span style="position:absolute;left:0;">–</span>Served as collateral Quality Assurance representative, reviewing maintenance documentation and ensuring compliance with USCG and FAA standards</li>
+            </ul>
+          </div>
+
+          <!-- AMT A School -->
+          <div style="margin-bottom:1.25rem;">
+            <div style="display:flex; justify-content:space-between; align-items:baseline; flex-wrap:wrap; gap:4px;">
+              <span style="font-size:14px; font-weight:500; color:var(--text);">AMT "A" School Student</span>
+              <span style="font-size:12px; color:var(--text-faint); white-space:nowrap;">Sep 2007 – Feb 2008</span>
+            </div>
+            <div style="font-size:13px; color:var(--text-muted); margin-bottom:6px; font-style:italic;">Aviation Maintenance Technician "A" School</div>
+            <ul style="list-style:none; padding:0; margin:0;">
+              <li style="font-size:13px; color:var(--text-muted); line-height:1.6; padding-left:14px; position:relative;"><span style="position:absolute;left:0;">–</span>Completed formal training in aviation maintenance fundamentals in preparation for fleet assignment</li>
+            </ul>
+          </div>
+
+          <!-- Kodiak -->
+          <div style="margin-bottom:1.25rem;">
+            <div style="display:flex; justify-content:space-between; align-items:baseline; flex-wrap:wrap; gap:4px;">
+              <span style="font-size:14px; font-weight:500; color:var(--text);">Airman</span>
+              <span style="font-size:12px; color:var(--text-faint); white-space:nowrap;">Apr 2007 – Sep 2007</span>
+            </div>
+            <div style="font-size:13px; color:var(--text-muted); margin-bottom:6px; font-style:italic;">Air Station Kodiak · Kodiak, AK</div>
+            <ul style="list-style:none; padding:0; margin:0;">
+              <li style="font-size:13px; color:var(--text-muted); line-height:1.6; padding-left:14px; position:relative;"><span style="position:absolute;left:0;">–</span>Supported aviation operations in entry-level role; gained exposure to maintenance and operational environment</li>
+            </ul>
+          </div>
+
+          <!-- Alex Haley -->
+          <div style="margin-bottom:1.25rem;">
+            <div style="display:flex; justify-content:space-between; align-items:baseline; flex-wrap:wrap; gap:4px;">
+              <span style="font-size:14px; font-weight:500; color:var(--text);">Boarding Team Member / Deck Operations</span>
+              <span style="font-size:12px; color:var(--text-faint); white-space:nowrap;">Feb 2006 – Apr 2007</span>
+            </div>
+            <div style="font-size:13px; color:var(--text-muted); margin-bottom:6px; font-style:italic;">USCGC Alex Haley</div>
+            <ul style="list-style:none; padding:0; margin:0;">
+              <li style="font-size:13px; color:var(--text-muted); line-height:1.6; padding-left:14px; position:relative; margin-bottom:3px;"><span style="position:absolute;left:0;">–</span>Conducted fisheries enforcement and maritime law enforcement operations as a Boarding Team Member</li>
+              <li style="font-size:13px; color:var(--text-muted); line-height:1.6; padding-left:14px; position:relative;"><span style="position:absolute;left:0;">–</span>Performed deck operations and supported cutter mission execution</li>
+            </ul>
+          </div>
+
+          <!-- Basic Training -->
+          <div style="margin-bottom:0;">
+            <div style="display:flex; justify-content:space-between; align-items:baseline; flex-wrap:wrap; gap:4px;">
+              <span style="font-size:14px; font-weight:500; color:var(--text);">Basic Training</span>
+              <span style="font-size:12px; color:var(--text-faint); white-space:nowrap;">Nov 2005 – Feb 2006</span>
+            </div>
+            <div style="font-size:13px; color:var(--text-muted); margin-bottom:6px; font-style:italic;">USCG Training Center Cape May · Cape May, NJ</div>
+            <ul style="list-style:none; padding:0; margin:0;">
+              <li style="font-size:13px; color:var(--text-muted); line-height:1.6; padding-left:14px; position:relative;"><span style="position:absolute;left:0;">–</span>Completed Coast Guard basic training, developing foundational skills in military discipline, seamanship, firefighting, damage control, and operational readiness</li>
+            </ul>
+          </div>
+        </div>
+
+        <!-- Section: Education -->
+        <div style="margin-bottom:1.75rem;">
+          <div style="font-size:11px; font-weight:500; letter-spacing:0.12em; text-transform:uppercase; color:var(--navy); border-bottom:1px solid var(--border); padding-bottom:4px; margin-bottom:1rem;">Education</div>
+
+          <div style="display:grid; grid-template-columns:1fr 1fr; gap:0.75rem 1.5rem;">
+            <div>
+              <div style="font-size:13px; font-weight:500; color:var(--text);">M.S. Organizational Performance &amp; Workplace Learning</div>
+              <div style="font-size:12px; color:var(--text-muted);">Boise State University · Expected Summer 2026</div>
+            </div>
+            <div>
+              <div style="font-size:13px; font-weight:500; color:var(--text);">Grad. Certificate, Workplace Performance Improvement</div>
+              <div style="font-size:12px; color:var(--text-muted);">Boise State University · Expected Summer 2026</div>
+            </div>
+            <div>
+              <div style="font-size:13px; font-weight:500; color:var(--text);">Grad. Certificate, Workplace Instructional Design</div>
+              <div style="font-size:12px; color:var(--text-muted);">Boise State University · Expected Fall 2026</div>
+            </div>
+            <div>
+              <div style="font-size:13px; font-weight:500; color:var(--text);">Master of Business Administration (MBA)</div>
+              <div style="font-size:12px; color:var(--text-muted);">East Texas A&amp;M University · 2017</div>
+            </div>
+            <div>
+              <div style="font-size:13px; font-weight:500; color:var(--text);">B.S. Applied Science &amp; Technology (Aviation Maintenance)</div>
+              <div style="font-size:12px; color:var(--text-muted);">Thomas Edison State University · 2014</div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Section: Certifications -->
+        <div style="margin-bottom:1.75rem;">
+          <div style="font-size:11px; font-weight:500; letter-spacing:0.12em; text-transform:uppercase; color:var(--navy); border-bottom:1px solid var(--border); padding-bottom:4px; margin-bottom:1rem;">Certifications &amp; Licenses</div>
+          <div style="display:grid; grid-template-columns:1fr 1fr; gap:0.5rem 1.5rem;">
+            <div style="font-size:13px; color:var(--text-muted);">PMI Project Management Professional (PMP)</div>
+            <div style="font-size:13px; color:var(--text-muted);">FAA Inspection Authorization (IA)</div>
+            <div style="font-size:13px; color:var(--text-muted);">FAA Airframe &amp; Powerplant (A&amp;P) Mechanic</div>
+            <div style="font-size:13px; color:var(--text-muted);">FCC GROL with Ship Radar Endorsement</div>
+          </div>
+        </div>
+
+        <!-- Section: Skills -->
+        <div style="margin-bottom:1.75rem;">
+          <div style="font-size:11px; font-weight:500; letter-spacing:0.12em; text-transform:uppercase; color:var(--navy); border-bottom:1px solid var(--border); padding-bottom:4px; margin-bottom:1rem;">Core Skills</div>
+          <div style="display:grid; grid-template-columns:1fr 1fr; gap:0.4rem 1.5rem;">
+            <div style="font-size:13px; color:var(--text-muted);">Needs Assessment &amp; Performance Gap Analysis</div>
+            <div style="font-size:13px; color:var(--text-muted);">Program Evaluation (Kirkpatrick, Chyung 10-Step)</div>
+            <div style="font-size:13px; color:var(--text-muted);">Instructional Design (ADDIE, Gilbert's BEM)</div>
+            <div style="font-size:13px; color:var(--text-muted);">Change Management (ADKAR, Kaleidoscope)</div>
+            <div style="font-size:13px; color:var(--text-muted);">Survey Design &amp; Mixed-Method Research (Qualtrics)</div>
+            <div style="font-size:13px; color:var(--text-muted);">Data Analysis &amp; Visualization (Power BI)</div>
+            <div style="font-size:13px; color:var(--text-muted);">Stakeholder Engagement &amp; Executive Reporting</div>
+            <div style="font-size:13px; color:var(--text-muted);">Aviation Maintenance Supervision &amp; QA</div>
+            <div style="font-size:13px; color:var(--text-muted);">Microsoft 365 · Google Workspace · Power Automate</div>
+            <div style="font-size:13px; color:var(--text-muted);">Leadership, Coaching &amp; Personnel Development</div>
+          </div>
+        </div>
+
+        <!-- Section: Selected Projects -->
+        <div>
+          <div style="font-size:11px; font-weight:500; letter-spacing:0.12em; text-transform:uppercase; color:var(--navy); border-bottom:1px solid var(--border); padding-bottom:4px; margin-bottom:1rem;">Selected Projects</div>
+          <div style="display:flex; flex-direction:column; gap:0.75rem;">
+            <div>
+              <div style="font-size:13px; font-weight:500; color:var(--text);">TRACEN Cape May Fitness Readiness, Change Management <span style="font-weight:400; color:var(--text-faint);">· OPWL 577</span></div>
+              <div style="font-size:13px; color:var(--text-muted); line-height:1.6;">Developed a phased change management strategy addressing a 25% PFA failure rate at the USCG's sole enlisted accession command, applying the Kaleidoscope Model and ADKAR framework across stakeholder interviews and a 97-response survey.</div>
+            </div>
+            <div>
+              <div style="font-size:13px; font-weight:500; color:var(--text);">USCG EMT Recertification Program Evaluation <span style="font-weight:400; color:var(--text-faint);">· OPWL 530</span></div>
+              <div style="font-size:13px; color:var(--text-muted); line-height:1.6;">Conducted a formative, mixed-method evaluation of the distributed EMT recertification model across ~1,253 personnel using Chyung's 10-Step framework, identifying standardization gaps and recommending systemic improvements.</div>
+            </div>
+            <div>
+              <div style="font-size:13px; font-weight:500; color:var(--text);">Idaho Youth Ranch, Emergency Drill Debrief Toolkit <span style="font-weight:400; color:var(--text-faint);">· OPWL 537</span></div>
+              <div style="font-size:13px; color:var(--text-muted); line-height:1.6;">Designed a performance support toolkit (facilitator's guide, job aid, documentation form) grounded in Gilbert's BEM and cognitive load theory to replace inconsistent debrief practice in a 24/7 youth care environment.</div>
+            </div>
+            <div>
+              <div style="font-size:13px; font-weight:500; color:var(--text);">Personal Performance Improvement Framework <span style="font-weight:400; color:var(--text-faint);">· OPWL 560</span></div>
+              <div style="font-size:13px; color:var(--text-muted); line-height:1.6;">Developed a personal HPI/OD practitioner framework integrating Gilbert's BEM, systems thinking, stakeholder analysis, and change management principles into a five-stage situational assessment model and intervention decision map.</div>
+            </div>
+            <div>
+              <div style="font-size:13px; font-weight:500; color:var(--text);">Boise State OPWL Industry Mentoring Program, Needs Assessment <span style="font-weight:400; color:var(--text-faint);">· OPWL 529</span></div>
+              <div style="font-size:13px; color:var(--text-muted); line-height:1.6;">Led a mixed-method needs assessment (faculty interviews, n=33 student survey, document analysis) identifying root causes of the academic-to-workplace readiness gap and recommending a structured industry mentoring program.</div>
+            </div>
+          </div>
+        </div>
+
+      </div><!-- end resume-doc -->
+    </div>
+  </section>
+</div><!-- end page-resume -->
+
+<style>
+@media print {
+  nav, .page-hero, button, footer { display: none !important; }
+  body { background: white !important; font-size: 13px; }
+  .page { display: block !important; }
+  #page-home, #page-change, #page-elearning, #page-evaluation,
+  #page-id, #page-needs, #page-opwl, #page-wp { display: none !important; }
+  #page-resume { display: block !important; }
+  section { padding: 0 !important; }
+  #resume-doc {
+    border: none !important;
+    border-radius: 0 !important;
+    padding: 0.5rem 1rem !important;
+    box-shadow: none !important;
+  }
+  .container { max-width: 100% !important; padding: 0 !important; }
+  a { color: inherit !important; text-decoration: none !important; }
+}
+</style>
+
+<!-- ── FOOTER ── -->
+<footer>
+  <div class="container" style="display:flex; flex-direction:column; align-items:center; gap:0.75rem;">
+    <div style="font-family:'DM Serif Display',serif; font-size:18px; color:#fff;">Blake <em style="font-style:italic; color:#a8bfd8;">George</em></div>
+    <div style="display:flex; gap:1.5rem; flex-wrap:wrap; justify-content:center;">
+      <a href="#" onclick="showPage('home');return false;" style="font-size:12px; color:#5a7898; text-decoration:none; letter-spacing:0.04em;">Home</a>
+      <a href="#" onclick="showSection('about');return false;" style="font-size:12px; color:#5a7898; text-decoration:none; letter-spacing:0.04em;">About</a>
+      <a href="#" onclick="showSection('work');return false;" style="font-size:12px; color:#5a7898; text-decoration:none; letter-spacing:0.04em;">Work Samples</a>
+      <a href="#" onclick="showPage('resume');return false;" style="font-size:12px; color:#5a7898; text-decoration:none; letter-spacing:0.04em;">Resume</a>
+      <a href="#" onclick="showSection('contact');return false;" style="font-size:12px; color:#5a7898; text-decoration:none; letter-spacing:0.04em;">Contact</a>
+    </div>
+    <p style="font-size:11px; color:#3a5570; margin-top:0.25rem;">Performance Systems &amp; Training Specialist · Boise State University OPWL · © 2026</p>
+  </div>
+</footer>
+
+<script>
+  function showPage(name) {
+    document.querySelectorAll('.page').forEach(p => p.classList.remove('active'));
+    const map = {
+      home: 'page-home',
+      change: 'page-change',
+      elearning: 'page-elearning',
+      evaluation: 'page-evaluation',
+      id: 'page-id',
+      needs: 'page-needs',
+      opwl: 'page-opwl',
+      resume: 'page-resume',
+      wp: 'page-wp'
+    };
+    const target = document.getElementById(map[name] || 'page-home');
+    if (target) target.classList.add('active');
+    window.scrollTo(0, 0);
+  }
+
+  function showSection(id) {
+    showPage('home');
+    setTimeout(() => {
+      const el = document.getElementById(id);
+      if (el) el.scrollIntoView({ behavior: 'smooth' });
+    }, 50);
+  }
+</script>
+</body>
+</html>
